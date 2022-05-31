@@ -370,4 +370,151 @@ class Backend extends CI_Controller {
 		json(response(true, 200, 'success, deleted'));
 	}
 	# category
+
+	# product
+	public function product()
+	{
+		$this->load([
+			'file' => 'module/product/index'
+		]);
+	}
+	public function productAdd()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$category_id = post('category_id');
+		$name  = post('name');
+		$price = post('price');
+		$description = post('description');
+		if (empty($name) || empty($category_id) || empty($price) || empty($description)) {
+            json(response(false, 400, 'bad request'));
+		}
+
+		$upload = _uploadFile(PATH_PRODUCT, 'file');
+		if (!$upload) {
+			json(response(false, 400, 'failed upload'));
+		}
+		
+		$this->load->database();
+		# check category
+		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		if ($category == 0) {
+			json(response(false, 404, 'category not found'));
+		}
+
+		$check = $this->db->query("SELECT id FROM product WHERE name = ? AND category_id = ? AND is_deleted = ? LIMIT 1", [$name, $category_id, null])->num_rows();
+		if ($check > 0) {
+			json(response(false, 400, 'product already exist'));
+		}
+		$create = $this->db->insert('product', [
+			'category_id'	=>	$category_id,
+			'name'			=>	$name,
+			'price'			=>	$price,
+			'img'			=>	$upload['file_name'],
+			'description'	=>	$description,
+			'created_by'	=>	session('user_name'),
+		]);
+		if (!$create) {
+			json(response(false, 500, 'failed'));
+		}
+		json(response(true, 200, 'success, created'));
+	}
+	public function productId()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$id = post('id');
+		if (!$id) {
+			json(response(false, 400, 'bad request'));
+		}
+		$this->load->database();
+		# check category
+		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		if ($category == 0) {
+			json(response(false, 404, 'category not found'));
+		}
+
+		$get = $this->db->query("SELECT id, name, category_id FROM product WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null]);
+		if ($get->num_rows() == 0) {
+			json(response(false, 404, 'data not found'));
+		}
+		json(response(true, 200, 'success', $get->row()));
+	}
+	public function productUpdate()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$id = post('id');
+		if (!$id) {
+			json(response(false, 400, 'bad request'));
+		}
+		$category_id = post('category_id');
+		$name  = post('name');
+		$price = post('price');
+		$description = post('description');
+		if (empty($name) || empty($category_id) || empty($price) || empty($description)) {
+            json(response(false, 400, 'bad request'));
+		}
+
+		$upload = _uploadFile(PATH_PRODUCT, 'file');
+		if (!$upload) {
+			json(response(false, 400, 'failed upload'));
+		}
+		$this->load->database();
+		
+		# check category
+		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		if ($category == 0) {
+			json(response(false, 404, 'category not found'));
+		}
+
+		$check = $this->db->query("SELECT id FROM product WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		if ($check == 0) {
+			json(response(false, 400, 'product not found'));
+		}
+		$update = $this->db->where('id', $id)->update('product', [
+			'category_id'	=>	$category_id,
+			'name'			=>	$name,
+			'price'			=>	$price,
+			'img'			=>	$upload['file_name'],
+			'description'	=>	$description,
+			'created_by'	=>	session('user_name'),
+		]);
+		if (!$update) {
+			json(response(false, 500, 'failed'));
+		}
+		json(response(true, 200, 'success, updated'));
+	}
+	public function productDelete()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$id = post('id');
+		if (!$id) {
+			json(response(false, 400, 'bad request'));
+		}
+		$this->load->database();
+		$check = $this->db->query("SELECT id FROM product WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		if ($check == 0) {
+			json(response(false, 400, 'product not found'));
+		}
+		$update = $this->db->where('id', $id)->update('product', [
+			'is_deleted'	=> 1,
+			'deleted_at'	=> date('Y-m-d h:i:s'),
+			'deleted_by'	=> session('user_name'),
+		]);
+		if (!$update) {
+			json(response(false, 500, 'failed'));
+		}
+		json(response(true, 200, 'success, deleted'));
+	}
+	# product
 }

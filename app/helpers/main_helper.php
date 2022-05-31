@@ -76,7 +76,7 @@ if (!function_exists('get_user_agent')) {
   }
 }
 if (!function_exists('upload_action')) {
-  function upload_action($path, $name)
+  function _uploadFile($path, $name, $debug = false)
   {
     if (!file_exists($path)) {
       mkdir($path, 0777, true);
@@ -99,6 +99,9 @@ if (!function_exists('upload_action')) {
         // ------------------------------------------------------------------------
         return $CI->upload->data();
       } else {
+        if (!$debug) {
+          return false;
+        }
         $error = $CI->upload->display_errors();
         // ------------------------------------------------------------------------
         if ($error === "<p>The file you are attempting to upload is larger than the permitted size.</p>") {

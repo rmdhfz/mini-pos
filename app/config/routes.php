@@ -32,4 +32,12 @@ $route = [
 	'category/update'			=> 'Backend/categoryUpdate',
 	'category/delete'			=> 'Backend/categoryDelete',
 	# category
+
+	# product
+	'product'					=> 'Backend/product',
+	'product/add'				=> 'Backend/productAdd',
+	'product/id'				=> 'Backend/productId',
+	'product/update'			=> 'Backend/productUpdate',
+	'product/delete'			=> 'Backend/productDelete',
+	# product
 ];

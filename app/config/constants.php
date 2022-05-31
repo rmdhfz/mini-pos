@@ -28,3 +28,4 @@ define("SECRET_GOOGLE_RECAPTCHA", "string");
 define("SALT_CUSTOM", "MINIPOS@2022");
 define("APP_NAME", "Mini Pos");
 define("GOOGLE_SITE_VERIFICATION", "");
+define("PATH_PRODUCT", "upload/product/");
