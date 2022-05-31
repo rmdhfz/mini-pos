@@ -147,7 +147,7 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM users WHERE id = ? AND is_deleted = ?LIMIT 1", [$id, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM users WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
 		if ($check == 0) {
 			json(response(false, 400, 'user not found'));
 		}
@@ -251,7 +251,7 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM suppliers WHERE id = ? AND is_deleted = ?LIMIT 1", [$id, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM suppliers WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
 		if ($check == 0) {
 			json(response(false, 400, 'supplier not found'));
 		}
@@ -266,4 +266,108 @@ class Backend extends CI_Controller {
 		json(response(true, 200, 'success, deleted'));
 	}
 	# supplier
+
+	# category
+	public function category()
+	{
+		$this->load([
+			'file' => 'module/category/index'
+		]);
+	}
+	public function categoryAdd()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$name  = post('name');
+		if (empty($name)) {
+            json(response(false, 400, 'bad request'));
+		}
+		$this->load->database();
+		$check = $this->db->query("SELECT id FROM category WHERE name = ? AND is_deleted = ? LIMIT 1", [$name, null])->num_rows();
+		if ($check > 0) {
+			json(response(false, 400, 'category already exist'));
+		}
+		$create = $this->db->insert('category', [
+			'name'			=> $name,
+			'created_by'	=> session('user_name'),
+		]);
+		if (!$create) {
+			json(response(false, 500, 'failed'));
+		}
+		json(response(true, 200, 'success, created'));
+	}
+	public function categoryId()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$id = post('id');
+		if (!$id) {
+			json(response(false, 400, 'bad request'));
+		}
+		$this->load->database();
+		$get = $this->db->query("SELECT id, name FROM category WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null]);
+		if ($get->num_rows() == 0) {
+			json(response(false, 404, 'data not found'));
+		}
+		json(response(true, 200, 'success', $get->row()));
+	}
+	public function categoryUpdate()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$id = post('id');
+		if (!$id) {
+			json(response(false, 400, 'bad request'));
+		}
+		$name  = post('name');
+		if (empty($name)) {
+            json(response(false, 400, 'bad request'));
+		}
+		$this->load->database();
+		$check = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		if ($check == 0) {
+			json(response(false, 400, 'category not found'));
+		}
+		$update = $this->db->where('id', $id)->update('category', [
+			'name'			=> $name,
+			'updated_at'	=> date('Y-m-d h:i:s'),
+			'updated_by'	=> session('user_name'),
+		]);
+		if (!$update) {
+			json(response(false, 500, 'failed'));
+		}
+		json(response(true, 200, 'success, updated'));
+	}
+	public function categoryDelete()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$id = post('id');
+		if (!$id) {
+			json(response(false, 400, 'bad request'));
+		}
+		$this->load->database();
+		$check = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		if ($check == 0) {
+			json(response(false, 400, 'category not found'));
+		}
+		$update = $this->db->where('id', $id)->update('category', [
+			'is_deleted'	=> 1,
+			'deleted_at'	=> date('Y-m-d h:i:s'),
+			'deleted_by'	=> session('user_name'),
+		]);
+		if (!$update) {
+			json(response(false, 500, 'failed'));
+		}
+		json(response(true, 200, 'success, deleted'));
+	}
+	# category
 }

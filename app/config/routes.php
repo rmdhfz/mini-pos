@@ -24,4 +24,12 @@ $route = [
 	'supplier/update'			=> 'Backend/supplierUpdate',
 	'supplier/delete'			=> 'Backend/supplierDelete',
 	# supplier
+
+	# category
+	'category'					=> 'Backend/category',
+	'category/add'				=> 'Backend/categoryAdd',
+	'category/id'				=> 'Backend/categoryId',
+	'category/update'			=> 'Backend/categoryUpdate',
+	'category/delete'			=> 'Backend/categoryDelete',
+	# category
 ];
