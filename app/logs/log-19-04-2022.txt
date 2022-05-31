@@ -1,0 +1,17 @@
+ERROR - 19-04-2022 04:13:20 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 19-04-2022 04:21:31 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 19-04-2022 04:21:31 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 19-04-2022 04:21:31 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 19-04-2022 04:21:35 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 19-04-2022 04:21:35 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 19-04-2022 04:21:35 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 19-04-2022 04:23:37 --> Severity: Warning --> include(module/penilaian/index.php): failed to open stream: No such file or directory D:\Developments\web\htdocs\upn\app\views\backend\index.php 364  --> IP Address : ::1
+ERROR - 19-04-2022 04:23:37 --> Severity: Warning --> include(): Failed opening 'module/penilaian/index.php' for inclusion (include_path='D:\Developments\web\php\PEAR') D:\Developments\web\htdocs\upn\app\views\backend\index.php 364  --> IP Address : ::1
+ERROR - 19-04-2022 04:55:57 --> 404 Page Not Found: Assets/css  --> IP Address : ::1
+ERROR - 19-04-2022 04:55:58 --> 404 Page Not Found: Assets/css  --> IP Address : ::1
+ERROR - 19-04-2022 04:56:01 --> 404 Page Not Found: Assets/css  --> IP Address : ::1
+ERROR - 19-04-2022 04:56:46 --> 404 Page Not Found: Assets/css  --> IP Address : ::1
+ERROR - 19-04-2022 04:56:46 --> 404 Page Not Found: Assets/css  --> IP Address : ::1
+ERROR - 19-04-2022 04:56:47 --> 404 Page Not Found: Assets/css  --> IP Address : ::1
+ERROR - 19-04-2022 04:56:47 --> 404 Page Not Found: Assets/css  --> IP Address : ::1
+ERROR - 19-04-2022 04:57:32 --> 404 Page Not Found: Assets/css  --> IP Address : ::1

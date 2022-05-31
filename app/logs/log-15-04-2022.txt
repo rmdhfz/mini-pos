@@ -1,0 +1,641 @@
+ERROR - 15-04-2022 00:00:19 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:00:19 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:00:19 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:00:52 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:00:52 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:00:52 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:01:05 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:01:05 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:01:05 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:01:28 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:01:28 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:01:28 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:02:33 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:02:33 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:02:33 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:02:33 --> Severity: error --> Exception: syntax error, unexpected '}' D:\Developments\web\htdocs\upn\app\models\Model.php 50  --> IP Address : ::1
+ERROR - 15-04-2022 00:02:40 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:02:40 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:02:40 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:02:40 --> Severity: Notice --> Undefined index: id D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:02:50 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:02:50 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:02:50 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:02:56 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:02:56 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:02:56 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:08 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:08 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:08 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:08 --> Severity: Notice --> Undefined offset: 0 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:08 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:16 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:16 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:16 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:16 --> Severity: Notice --> Undefined index: i D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:32 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:32 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:32 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:32 --> Severity: Notice --> Undefined index: i D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:43 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:43 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:43 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:43 --> Severity: Notice --> Undefined offset: 0 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:43 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:48 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:48 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:48 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:59 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:59 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:03:59 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:04:19 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:04:19 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:04:19 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:03 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:03 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:03 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:03 --> Severity: Notice --> Undefined index: n D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:03 --> Severity: Notice --> Undefined index: e D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:03 --> Severity: Notice --> Undefined index: u D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:15 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:15 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:15 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:15 --> Severity: Notice --> Undefined index: n D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:15 --> Severity: Notice --> Undefined index: e D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:15 --> Severity: Notice --> Undefined index: u D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:28 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:28 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:28 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:28 --> Severity: Notice --> Undefined index: n D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:28 --> Severity: Notice --> Undefined index: m D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:28 --> Severity: Notice --> Undefined index: e D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:32 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:32 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:32 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:32 --> Severity: Notice --> Undefined index: name D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:32 --> Severity: Notice --> Undefined index: email D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:32 --> Severity: Notice --> Undefined index: username D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:43 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:43 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:43 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:43 --> Severity: Notice --> Undefined index: name D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:43 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:43 --> Severity: Notice --> Undefined index: email D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:43 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:43 --> Severity: Notice --> Undefined index: username D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:05:43 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:09 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:09 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:09 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:09 --> Severity: Notice --> Undefined index: n D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:09 --> Severity: Notice --> Undefined index: m D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:09 --> Severity: Notice --> Undefined index: e D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:19 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:19 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:19 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:19 --> Severity: Notice --> Undefined index: name D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:19 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:19 --> Severity: Notice --> Undefined index: email D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:19 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:19 --> Severity: Notice --> Undefined index: username D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:19 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:31 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:31 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:31 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:31 --> Severity: Notice --> Undefined index: n D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:31 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:31 --> Severity: Notice --> Undefined index: e D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:31 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:31 --> Severity: Notice --> Undefined index: u D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:06:31 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:01 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:01 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:01 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:01 --> Severity: Notice --> Undefined index: n D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:01 --> Severity: Notice --> Undefined index: e D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:01 --> Severity: Notice --> Undefined index: u D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:22 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:22 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:22 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:22 --> Severity: Notice --> Undefined index: name D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:22 --> Severity: Notice --> Undefined index: email D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:22 --> Severity: Notice --> Undefined index: username D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:31 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:31 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:31 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:07:31 --> Severity: error --> Exception: syntax error, unexpected '$value' (T_VARIABLE), expecting ']' D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:07 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:07 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:07 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:07 --> Severity: Notice --> Undefined index: n D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:07 --> Severity: Notice --> Undefined index: m D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:07 --> Severity: Notice --> Undefined index: e D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:12 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:12 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:12 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:12 --> Severity: Notice --> Undefined index: n D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:12 --> Severity: Notice --> Undefined index: e D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:12 --> Severity: Notice --> Undefined index: u D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:20 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:20 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:20 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:20 --> Severity: Notice --> Undefined offset: 1 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:20 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:20 --> Severity: Notice --> Undefined offset: 2 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:20 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:35 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:35 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:35 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:35 --> Severity: Notice --> Undefined index: name D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:35 --> Severity: Notice --> Undefined index: email D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:35 --> Severity: Notice --> Undefined index: username D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:42 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:42 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:42 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:42 --> Severity: Notice --> Undefined index: name D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:42 --> Severity: Notice --> Undefined index: email D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:42 --> Severity: Notice --> Undefined index: username D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:59 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:59 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:59 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:59 --> Severity: Notice --> Undefined offset: 1 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:59 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:59 --> Severity: Notice --> Undefined offset: 1 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:59 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:59 --> Severity: Notice --> Undefined offset: 1 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:08:59 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:09:14 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:09:14 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:09:14 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:09:20 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:09:20 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:09:20 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:10:20 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:10:20 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:10:20 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:10:20 --> Severity: Notice --> Undefined offset: 1 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:10:20 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:10:20 --> Severity: Notice --> Undefined offset: 1 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:10:20 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:10:20 --> Severity: Notice --> Undefined offset: 1 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:10:20 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:01 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:01 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:01 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:02 --> Severity: Notice --> Undefined offset: 1 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:02 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:02 --> Severity: Notice --> Undefined offset: 1 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:02 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:02 --> Severity: Notice --> Undefined offset: 1 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:02 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:02 --> Severity: Notice --> Undefined offset: 1 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:02 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:02 --> Severity: Notice --> Undefined offset: 1 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:02 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:02 --> Severity: Notice --> Undefined offset: 1 D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:02 --> Severity: Notice --> Trying to access array offset on value of type null D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:12 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:12 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:12 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:12 --> Severity: Notice --> Undefined index: name D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:12 --> Severity: Notice --> Undefined index: email D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:12 --> Severity: Notice --> Undefined index: username D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:12 --> Severity: Notice --> Undefined index: name D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:12 --> Severity: Notice --> Undefined index: email D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:12 --> Severity: Notice --> Undefined index: username D:\Developments\web\htdocs\upn\app\models\Model.php 48  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:24 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:24 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:24 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:31 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:31 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:31 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:55 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:55 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:11:55 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:01 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:01 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:01 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:01 --> Severity: Warning --> Illegal offset type D:\Developments\web\htdocs\upn\app\models\Model.php 49  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:01 --> Severity: Warning --> Illegal offset type D:\Developments\web\htdocs\upn\app\models\Model.php 49  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:09 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:09 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:09 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:09 --> Severity: Warning --> Illegal offset type D:\Developments\web\htdocs\upn\app\models\Model.php 49  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:09 --> Severity: Warning --> Illegal offset type D:\Developments\web\htdocs\upn\app\models\Model.php 49  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:26 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:26 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:26 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:26 --> Severity: Notice --> Undefined offset: 0 D:\Developments\web\htdocs\upn\app\models\Model.php 49  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:26 --> Severity: Notice --> Undefined index:  D:\Developments\web\htdocs\upn\app\models\Model.php 49  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:26 --> Severity: Notice --> Undefined offset: 0 D:\Developments\web\htdocs\upn\app\models\Model.php 49  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:26 --> Severity: Notice --> Undefined index:  D:\Developments\web\htdocs\upn\app\models\Model.php 49  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:35 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:35 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:35 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:52 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:52 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 00:12:52 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:01:44 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:01:44 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:01:44 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 01:01:55 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 01:03:14 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:03:14 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:03:14 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 01:03:16 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:03:16 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:03:16 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 01:03:16 --> Severity: Notice --> Undefined variable: field_data D:\Developments\web\htdocs\upn\app\models\Model.php 33  --> IP Address : ::1
+ERROR - 15-04-2022 01:03:26 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 01:03:26 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:03:26 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:12:04 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:12:04 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:12:04 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 01:13:35 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:13:35 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:13:35 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 01:13:38 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:13:38 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 01:13:38 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:15:08 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:15:08 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 01:15:08 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:56:45 --> Severity: error --> Exception: syntax error, unexpected ':' D:\Developments\web\htdocs\upn\app\controllers\Backend.php 137  --> IP Address : ::1
+ERROR - 15-04-2022 01:57:00 --> Severity: error --> Exception: syntax error, unexpected ':' D:\Developments\web\htdocs\upn\app\controllers\Backend.php 238  --> IP Address : ::1
+ERROR - 15-04-2022 01:57:08 --> Severity: error --> Exception: syntax error, unexpected ':' D:\Developments\web\htdocs\upn\app\controllers\Backend.php 340  --> IP Address : ::1
+ERROR - 15-04-2022 01:57:15 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 01:57:15 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 01:57:15 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:07:27 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:07:27 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:07:27 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:07:35 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:07:35 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:07:35 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:08:14 --> Query error: Unknown column 'username' in 'field list' - Invalid query: INSERT INTO `students` (`name`, `email`, `username`, `password`) VALUES ('aaaaaaaa', 'aaaaaaaaa@mail.com', 'aaaaaaaaaaaaaaa', '$2y$10$WliKki49aOX5PKNvXHUDTuStakAz.Face1BXU4nSVF2iNyb1U1ITW')  --> IP Address : ::1
+ERROR - 15-04-2022 02:10:54 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:10:54 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:10:54 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:11:33 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:11:33 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:11:33 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:12:49 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:12:49 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:12:49 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:12:55 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:12:55 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:12:55 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:13:34 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:13:34 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:13:34 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:15:52 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:15:52 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:15:52 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:19:22 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:19:22 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:19:22 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:20:15 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:20:15 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:20:15 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:20:54 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:20:54 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:20:54 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:22:19 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:22:19 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:22:19 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:24:12 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:24:12 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:24:12 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:30:13 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:30:13 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:30:13 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:30:47 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:30:47 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:30:47 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:31:02 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:31:02 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:31:02 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:31:43 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:31:43 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:31:44 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:32:34 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:32:34 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:32:34 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:33:03 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:33:03 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:33:03 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:33:28 --> Severity: Notice --> Undefined variable: nim D:\Developments\web\htdocs\upn\app\controllers\Backend.php 119  --> IP Address : ::1
+ERROR - 15-04-2022 02:34:05 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:34:05 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:34:05 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:34:51 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:34:51 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:34:51 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:39:37 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:39:37 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:39:37 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:39:57 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:39:57 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:39:57 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:42:34 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:42:34 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:42:34 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:42:38 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:42:38 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:42:38 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:43:05 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:43:05 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:43:05 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:43:16 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:43:16 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:43:16 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:43:57 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:43:57 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:43:57 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:44:21 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:44:21 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:44:21 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:44:33 --> Severity: Warning --> include(module/rumahsakit/index.php): failed to open stream: No such file or directory D:\Developments\web\htdocs\upn\app\views\backend\index.php 364  --> IP Address : ::1
+ERROR - 15-04-2022 02:44:33 --> Severity: Warning --> include(): Failed opening 'module/rumahsakit/index.php' for inclusion (include_path='D:\Developments\web\php\PEAR') D:\Developments\web\htdocs\upn\app\views\backend\index.php 364  --> IP Address : ::1
+ERROR - 15-04-2022 02:47:46 --> 404 Page Not Found: Backend/listrRumahSakit  --> IP Address : ::1
+ERROR - 15-04-2022 02:47:49 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:47:49 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:47:49 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:47:49 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:47:49 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:47:49 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:47:49 --> 404 Page Not Found: Backend/listrRumahSakit  --> IP Address : ::1
+ERROR - 15-04-2022 02:48:02 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:48:02 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:48:02 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:48:10 --> 404 Page Not Found: Backend/saverRumahSakit  --> IP Address : ::1
+ERROR - 15-04-2022 02:48:25 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:48:25 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:48:25 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:48:56 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:48:56 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:48:56 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:48:58 --> Query error: Unknown column 'deleted_by' in 'field list' - Invalid query: UPDATE `hospitals` SET `is_deleted` = 1, `deleted_at` = '2022-04-15 02:48:58', `deleted_by` = 'Hafiz'
+WHERE `id` = '1'  --> IP Address : ::1
+ERROR - 15-04-2022 02:51:09 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:51:09 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:51:09 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:51:39 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:51:39 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 02:51:39 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:51:44 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:51:44 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 02:51:44 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:34:14 --> Query error: Table 'upn.departement' doesn't exist - Invalid query: SELECT d.id, d.name, d.is_active, h.name as hospital FROM departement d INNER JOIN hospital h ON d.hospital_id = h.id WHERE d.is_deleted IS NULL  --> IP Address : ::1
+ERROR - 15-04-2022 03:34:17 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:34:17 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:34:17 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:34:17 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:34:17 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:34:17 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:34:17 --> Query error: Table 'upn.departement' doesn't exist - Invalid query: SELECT d.id, d.name, d.is_active, h.name as hospital FROM departement d INNER JOIN hospital h ON d.hospital_id = h.id WHERE d.is_deleted IS NULL  --> IP Address : ::1
+ERROR - 15-04-2022 03:37:16 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:37:16 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:37:16 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:37:17 --> Query error: Table 'upn.hospital' doesn't exist - Invalid query: SELECT d.id, d.name, d.is_active, h.name as hospital FROM departements d INNER JOIN hospital h ON d.hospital_id = h.id WHERE d.is_deleted IS NULL  --> IP Address : ::1
+ERROR - 15-04-2022 03:37:27 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:37:27 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:37:27 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:38:14 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:38:14 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:38:14 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:38:24 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:38:24 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:38:24 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:38:52 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:38:52 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:38:52 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:39:13 --> Query error: Table 'upn.departement' doesn't exist - Invalid query: INSERT INTO `departement` (`hospital_id`, `name`, `is_active`) VALUES ('2', 'test departement', '1')  --> IP Address : ::1
+ERROR - 15-04-2022 03:39:33 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:39:33 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:39:33 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:44:46 --> 404 Page Not Found: Monitoring/aktivitas-pengguna  --> IP Address : ::1
+ERROR - 15-04-2022 03:56:06 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:56:06 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:56:06 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:56:07 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:56:07 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:56:07 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:56:43 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:56:43 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:56:43 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:56:44 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:56:44 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:56:44 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:57:04 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:57:04 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:57:04 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:57:46 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 03:57:46 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 03:57:46 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:00:07 --> Severity: Warning --> include(module/pengajuan/index.php): failed to open stream: No such file or directory D:\Developments\web\htdocs\upn\app\views\backend\index.php 364  --> IP Address : ::1
+ERROR - 15-04-2022 04:00:07 --> Severity: Warning --> include(): Failed opening 'module/pengajuan/index.php' for inclusion (include_path='D:\Developments\web\php\PEAR') D:\Developments\web\htdocs\upn\app\views\backend\index.php 364  --> IP Address : ::1
+ERROR - 15-04-2022 04:00:49 --> Severity: Warning --> include(module/pengajuan/index.php): failed to open stream: No such file or directory D:\Developments\web\htdocs\upn\app\views\backend\index.php 364  --> IP Address : ::1
+ERROR - 15-04-2022 04:00:49 --> Severity: Warning --> include(): Failed opening 'module/pengajuan/index.php' for inclusion (include_path='D:\Developments\web\php\PEAR') D:\Developments\web\htdocs\upn\app\views\backend\index.php 364  --> IP Address : ::1
+ERROR - 15-04-2022 04:01:38 --> Severity: error --> Exception: Call to undefined method Model::listPengajuan() D:\Developments\web\htdocs\upn\app\controllers\Backend.php 518  --> IP Address : ::1
+ERROR - 15-04-2022 04:13:10 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:13:10 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:13:10 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:13:11 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:13:11 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:13:11 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:13:11 --> Severity: error --> Exception: Call to undefined method Model::listPengajuan() D:\Developments\web\htdocs\upn\app\controllers\Backend.php 543  --> IP Address : ::1
+ERROR - 15-04-2022 04:13:13 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:13:13 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:13:13 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:13:13 --> Severity: error --> Exception: Call to undefined method Model::listPengajuan() D:\Developments\web\htdocs\upn\app\controllers\Backend.php 543  --> IP Address : ::1
+ERROR - 15-04-2022 04:13:29 --> 404 Page Not Found: Departement/search  --> IP Address : ::1
+ERROR - 15-04-2022 04:13:31 --> 404 Page Not Found: Departement/search  --> IP Address : ::1
+ERROR - 15-04-2022 04:16:30 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:16:30 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:16:30 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:16:31 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ON s.id INNER JOIN hospitals h ON p.hospital_id = h.id INNER JOIN departement...' at line 1 - Invalid query: SELECT s.name as mahasiswa, h.name as rumahsakit, d.name as departement, p.is_approved as status FROM pengajuan p INNER JOIN students s ON p.student_id ON s.id INNER JOIN hospitals h ON p.hospital_id = h.id INNER JOIN departements d ON p.departement_id ON d.id WHERE p.is_deleted IS NULL  --> IP Address : ::1
+ERROR - 15-04-2022 04:16:50 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:16:50 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:16:50 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:16:50 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ON s.id INNER JOIN hospitals h ON p.hospital_id = h.id INNER JOIN departement...' at line 1 - Invalid query: SELECT s.name as mahasiswa, h.name as rumahsakit, d.name as departement, p.is_approved as status FROM pengajuan p INNER JOIN students s ON p.student_id ON s.id INNER JOIN hospitals h ON p.hospital_id = h.id INNER JOIN departements d ON p.departement_id = d.id WHERE p.is_deleted IS NULL  --> IP Address : ::1
+ERROR - 15-04-2022 04:17:44 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:17:44 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:17:44 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:17:45 --> Query error: Table 'upn.pengajuan' doesn't exist - Invalid query: 
+			SELECT 
+			s.name as mahasiswa, 
+			h.name as rumahsakit, 
+			d.name as departement, 
+			p.is_approved as status 
+
+			FROM pengajuan p 
+			INNER JOIN students s ON p.student_id = s.id 
+			INNER JOIN hospitals h ON p.hospital_id = h.id 
+			INNER JOIN departements d ON p.departement_id = d.id 
+			WHERE p.is_deleted IS NULL  --> IP Address : ::1
+ERROR - 15-04-2022 04:17:55 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:17:55 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:17:55 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:17:58 --> 404 Page Not Found: Departement/search  --> IP Address : ::1
+ERROR - 15-04-2022 04:18:01 --> 404 Page Not Found: Departement/search  --> IP Address : ::1
+ERROR - 15-04-2022 04:18:04 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:18:04 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:18:04 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:18:05 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:18:05 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:18:05 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:18:24 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:18:24 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:18:24 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:18:26 --> 404 Page Not Found: Departement/search  --> IP Address : ::1
+ERROR - 15-04-2022 04:18:29 --> 404 Page Not Found: Departement/search  --> IP Address : ::1
+ERROR - 15-04-2022 04:19:14 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:19:14 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:19:14 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:19:18 --> 404 Page Not Found: Departement/search  --> IP Address : ::1
+ERROR - 15-04-2022 04:19:55 --> 404 Page Not Found: Departement/search  --> IP Address : ::1
+ERROR - 15-04-2022 04:20:12 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:20:12 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:20:12 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:20:36 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:20:36 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:20:36 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:23:34 --> Query error: Unknown column 'name' in 'where clause' - Invalid query: SELECT id FROM submissions WHERE name = '' AND is_deleted IS NULL LIMIT 1  --> IP Address : ::1
+ERROR - 15-04-2022 04:23:36 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:23:36 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:23:36 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:23:38 --> Query error: Unknown column 'name' in 'where clause' - Invalid query: SELECT id FROM submissions WHERE name = '' AND is_deleted IS NULL LIMIT 1  --> IP Address : ::1
+ERROR - 15-04-2022 04:50:31 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:50:31 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:50:31 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:50:39 --> Severity: Notice --> Undefined variable: hospital_id D:\Developments\web\htdocs\upn\app\controllers\Backend.php 551  --> IP Address : ::1
+ERROR - 15-04-2022 04:51:06 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:51:06 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:51:06 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:51:06 --> Severity: Notice --> Undefined property: stdClass::$id D:\Developments\web\htdocs\upn\app\models\Model.php 180  --> IP Address : ::1
+ERROR - 15-04-2022 04:51:22 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:51:22 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:51:22 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:51:28 --> Severity: Notice --> Undefined property: stdClass::$id D:\Developments\web\htdocs\upn\app\models\Model.php 180  --> IP Address : ::1
+ERROR - 15-04-2022 04:51:48 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:51:48 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:51:48 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:51:49 --> Severity: Notice --> Undefined property: stdClass::$is_active D:\Developments\web\htdocs\upn\app\models\Model.php 186  --> IP Address : ::1
+ERROR - 15-04-2022 04:52:02 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:52:02 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:52:02 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:54:17 --> Query error: Unknown column 'is_active' in 'field list' - Invalid query: SELECT id, student_id, hospital_id, departement_id, is_active as status FROM submissions WHERE id = '1' AND is_deleted IS NULL LIMIT 1  --> IP Address : ::1
+ERROR - 15-04-2022 04:54:20 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:54:20 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:54:20 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:54:21 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:54:21 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:54:21 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:54:23 --> Query error: Unknown column 'is_active' in 'field list' - Invalid query: SELECT id, student_id, hospital_id, departement_id, is_active as status FROM submissions WHERE id = '1' AND is_deleted IS NULL LIMIT 1  --> IP Address : ::1
+ERROR - 15-04-2022 04:54:41 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:54:41 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:54:41 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:55:12 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:55:12 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:55:12 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:57:25 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.is_done,
+			p.done_at
+
+			FROM submissions p 
+			INNER JOIN students s O...' at line 10 - Invalid query: 
+			SELECT 
+			p.id,
+			s.name as mahasiswa, 
+			h.name as rumahsakit, 
+			d.name as departement, 
+			p.is_approved as status,
+			p.approved_at,
+			p.is_rejected,
+			p.rejected_at.
+			p.is_done,
+			p.done_at
+
+			FROM submissions p 
+			INNER JOIN students s ON p.student_id = s.id 
+			INNER JOIN hospitals h ON p.hospital_id = h.id 
+			INNER JOIN departements d ON p.departement_id = d.id 
+			WHERE p.is_deleted IS NULL  --> IP Address : ::1
+ERROR - 15-04-2022 04:57:28 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.is_done,
+			p.done_at
+
+			FROM submissions p 
+			INNER JOIN students s O...' at line 10 - Invalid query: 
+			SELECT 
+			p.id,
+			s.name as mahasiswa, 
+			h.name as rumahsakit, 
+			d.name as departement, 
+			p.is_approved as status,
+			p.approved_at,
+			p.is_rejected,
+			p.rejected_at.
+			p.is_done,
+			p.done_at
+
+			FROM submissions p 
+			INNER JOIN students s ON p.student_id = s.id 
+			INNER JOIN hospitals h ON p.hospital_id = h.id 
+			INNER JOIN departements d ON p.departement_id = d.id 
+			WHERE p.is_deleted IS NULL  --> IP Address : ::1
+ERROR - 15-04-2022 04:57:31 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:57:31 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:57:31 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:57:34 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:57:34 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:57:34 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:57:34 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.is_done,
+			p.done_at
+
+			FROM submissions p 
+			INNER JOIN students s O...' at line 10 - Invalid query: 
+			SELECT 
+			p.id,
+			s.name as mahasiswa, 
+			h.name as rumahsakit, 
+			d.name as departement, 
+			p.is_approved as status,
+			p.approved_at,
+			p.is_rejected,
+			p.rejected_at.
+			p.is_done,
+			p.done_at
+
+			FROM submissions p 
+			INNER JOIN students s ON p.student_id = s.id 
+			INNER JOIN hospitals h ON p.hospital_id = h.id 
+			INNER JOIN departements d ON p.departement_id = d.id 
+			WHERE p.is_deleted IS NULL  --> IP Address : ::1
+ERROR - 15-04-2022 04:58:58 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 04:58:58 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 04:58:58 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 05:00:01 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 05:00:01 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 05:00:01 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 05:00:12 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 05:00:12 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 05:00:12 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 16:02:21 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 16:02:21 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 16:02:21 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 16:02:26 --> Severity: Warning --> include(module/penilaian/index.php): failed to open stream: No such file or directory D:\Developments\web\htdocs\upn\app\views\backend\index.php 364  --> IP Address : ::1
+ERROR - 15-04-2022 16:02:26 --> Severity: Warning --> include(): Failed opening 'module/penilaian/index.php' for inclusion (include_path='D:\Developments\web\php\PEAR') D:\Developments\web\htdocs\upn\app\views\backend\index.php 364  --> IP Address : ::1
+ERROR - 15-04-2022 16:02:26 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 16:02:26 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 15-04-2022 16:02:26 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 16:02:26 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 15-04-2022 16:02:48 --> Severity: Warning --> include(module/penilaian/index.php): failed to open stream: No such file or directory D:\Developments\web\htdocs\upn\app\views\backend\index.php 364  --> IP Address : ::1
+ERROR - 15-04-2022 16:02:48 --> Severity: Warning --> include(): Failed opening 'module/penilaian/index.php' for inclusion (include_path='D:\Developments\web\php\PEAR') D:\Developments\web\htdocs\upn\app\views\backend\index.php 364  --> IP Address : ::1
+ERROR - 15-04-2022 16:06:19 --> 404 Page Not Found: Frontend/daftar  --> IP Address : ::1
+ERROR - 15-04-2022 16:08:30 --> 404 Page Not Found: Frontend/daftar  --> IP Address : ::1
+ERROR - 15-04-2022 16:08:30 --> 404 Page Not Found: Frontend/daftar  --> IP Address : ::1
+ERROR - 15-04-2022 16:08:31 --> 404 Page Not Found: Frontend/daftar  --> IP Address : ::1
+ERROR - 15-04-2022 16:08:31 --> 404 Page Not Found: Frontend/daftar  --> IP Address : ::1
+ERROR - 15-04-2022 16:08:31 --> 404 Page Not Found: Frontend/daftar  --> IP Address : ::1
+ERROR - 15-04-2022 16:08:31 --> 404 Page Not Found: Frontend/daftar  --> IP Address : ::1

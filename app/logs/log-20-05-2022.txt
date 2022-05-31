@@ -1,0 +1,1 @@
+ERROR - 20-05-2022 08:52:42 --> Severity: error --> Exception: syntax error, unexpected ''role/data'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' D:\Developments\web\htdocs\inventory\app\config\routes.php 22  --> IP Address : ::1

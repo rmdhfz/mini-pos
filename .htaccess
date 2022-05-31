@@ -1,0 +1,46 @@
+## REMOVE INDEX.PHP START ##
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+
+	RewriteCond $1 !^(index\.php|images|resources|robots\.txt)
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php?/$1 [L,QSA]
+</IfModule>
+## REMOVE INDEX.PHP END ##
+
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set server "**********"
+    Header always set x-powered-by "************"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Cross-Origin-Opener-Policy "cross-origin"
+    Header always set Cross-Origin-Embedder-Policy "cross-origin"
+    Header always set Cross-Origin-Resource-Policy "same-site"
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+</IfModule>
+
+## EXPIRES CACHING START ##
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresByType image/x-icon "access 1 year"
+	ExpiresByType image/jpg "access 1 year"
+	ExpiresByType image/jpeg "access 1 year"
+	ExpiresByType image/gif "access 1 year"
+	ExpiresByType image/png "access 1 year"
+	ExpiresByType text/css "access 1 month"
+	ExpiresByType text/x-javascript "access 1 month"
+	ExpiresByType application/pdf "access 1 month"
+	ExpiresByType application/x-shockwave-flash "access 1 month"
+	ExpiresByType application/javascript "access 1 month"
+</IfModule>
+## EXPIRES CACHING END ##
+
+## UPLOAD MAX SIZE ##
+#	php_value upload_max_filesize 500M
+#	php_value post_max_size 500M
+#	php_value max_execution_time 650
+#	php_value max_input_time 500
+## END OF UPLOAD MAX SIZE

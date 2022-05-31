@@ -1,0 +1,10 @@
+ERROR - 14-05-2022 12:14:17 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 14-05-2022 12:14:17 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 14-05-2022 12:14:17 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 14-05-2022 12:14:17 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 14-05-2022 12:19:34 --> 404 Page Not Found: Mahasiswa/index  --> IP Address : ::1
+ERROR - 14-05-2022 12:19:47 --> 404 Page Not Found: Mahasiswa/list  --> IP Address : ::1
+ERROR - 14-05-2022 12:19:47 --> 404 Page Not Found: Paket/data  --> IP Address : ::1
+ERROR - 14-05-2022 12:20:16 --> 404 Page Not Found: Paket/data  --> IP Address : ::1
+ERROR - 14-05-2022 12:25:09 --> 404 Page Not Found: Paket/data  --> IP Address : ::1
+ERROR - 14-05-2022 12:25:27 --> 404 Page Not Found: Paket/data  --> IP Address : ::1
