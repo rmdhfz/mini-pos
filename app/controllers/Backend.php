@@ -4,11 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Backend extends CI_Controller {
 
-	function __construct(){
+	function __construct()
+	{
 		parent::__construct();
 		$this->init();
 	}
-	private function init() {
+
+	private function init() 
+	{
 		$this->load->library('session');
 		if (!$this->session->userdata('is_login') ){
 			redirect(site_url(), 'refresh');
@@ -21,12 +24,63 @@ class Backend extends CI_Controller {
 		}
 		$this->load->view('backend/index', $params);
 	}
-	public function index() {
+
+	# list
+	public function listUser()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$this->load->model('model');
+		$this->model->listUser();
+	}
+	public function listSupplier()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$this->load->model('model');
+		$this->model->listSupplier();
+	}
+	public function listCategory()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$this->load->model('model');
+		$this->model->listCategory();
+	}
+	public function listProduct()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$this->load->model('model');
+		$this->model->listProduct();
+	}
+	public function listCustomer()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$this->load->model('model');
+		$this->model->listCustomer();
+	}
+	# list
+
+	public function index() 
+	{
 		$this->load([
 			'file'	=> 'module/dashboard/index',
 		]);
 	}
-	public function logout() {
+	public function logout() 
+	{
 		$confirm = $this->input->get('confirm', true);
 		if (!$confirm) {
 			redirect(site_url('dashboard'), 'refresh');

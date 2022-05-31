@@ -9,6 +9,14 @@ $route = [
 	'dashboard'				=>	'Backend',
 	'logout'				=>	'Backend/logout',
 
+	# list
+	'list/user'				=>	'Backend/listUser',
+	'list/supplier'			=>	'Backend/listSupplier',
+	'list/category'			=>	'Backend/listCategory',
+	'list/product'			=>	'Backend/listProduct',
+	'list/customer'			=>	'Backend/listCustomer',
+	# list
+
 	# user
 	'user'					=> 'Backend/user',
 	'user/add'				=> 'Backend/userAdd',

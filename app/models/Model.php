@@ -4,51 +4,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model extends CI_Model {
 
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
         $this->init();
+        $this->load->database();
     }
-    private function init() {
+    
+    private function init() 
+    {
 		$this->load->library('session');
 		if (!$this->session->userdata('is_login') ){
 			redirect(site_url(), 'refresh');
-		}
-	}
-	private function _executeSQL($table, $fields, $condition = false) {
-		/*TODO*/
-		if (!$table || !$fields) {
 			return false;
 		}
-		$this->load->database();
-		if ($condition) {
-			$sql = $this->db->query("SELECT $fields FROM $table WHERE $condition");
-		}
-		$sql = $this->db->query("SELECT $fields FROM $table");
-		if ($sql->num_rows() == 0) {
-			return false;
-		}
-		$result = ['data' => []];
-		$no = 0;
-		$fields = $sql->list_fields();
-		$fields_data = $sql->field_data();
-		json($fields_data);
-		$arrfields = [];
-		foreach ($fields as $key => $value) {
-			$arrfields[$key] = $value;
-		}
-		$row = $sql->result_array();
-		$tmp = [];
-		for ($i=0; $i <= count($fields); $i++) { $no++;
-			foreach ($row as $key => $value) {
-				$result['data'][$key] = [
-					$no,
-					$value[$arrfields[$key]]
-				];
-			}
-		}
-		return $result;
 	}
-	private function createOptions($id) {
+	private function createOptions($id)
+	{
 		if (!$id) {
 			return false;
 		}
@@ -56,9 +28,11 @@ class Model extends CI_Model {
 		<button id="edit" data-id="'.$id.'" class="btn btn-flat btn-sm btn-info"> edit </button>
 		<button id="delete" data-id="'.$id.'" class="btn btn-flat btn-sm btn-danger"> hapus </button>';
 	}
-	public function listEmployee(){
+
+	# list
+	public function listUser(){
 		$this->load->database();
-		$get = $this->db->query("SELECT * FROM employees");
+		$get = $this->db->query("SELECT * FROM users");
 		if ($get->num_rows() == 0) {
 			json([]);
 		}
@@ -74,15 +48,15 @@ class Model extends CI_Model {
 				$no,
 				$value->name,
 				$value->email,
-				$value->phone,
+				$value->username,
 				$options
 			];
 		}
 		json($result);
 	}
-	public function listRole(){
-		$this->load->database();
-		$get = $this->db->query("SELECT * FROM roles");
+	public function listSupplier()
+	{
+		$get = $this->db->query("SELECT id, name, created_at, created_by FROM suppliers WHERE is_deleted IS NULL");
 		if ($get->num_rows() == 0) {
 			json([]);
 		}
@@ -102,9 +76,9 @@ class Model extends CI_Model {
 		}
 		json($result);
 	}
-	public function listAsset(){
-		$this->load->database();
-		$get = $this->db->query("SELECT * FROM assets");
+	public function listCategory()
+	{
+		$get = $this->db->query("SELECT id, name, created_at, created_by FROM category WHERE is_deleted IS NULL");
 		if ($get->num_rows() == 0) {
 			json([]);
 		}
@@ -118,17 +92,15 @@ class Model extends CI_Model {
 			}
 			$result['data'][$key] = [
 				$no,
-				$value->asset_no,
 				$value->name,
-				$value->type,
 				$options
 			];
 		}
 		json($result);
 	}
-	public function listAssignment(){
-		$this->load->database();
-		$get = $this->db->query("SELECT a.name as asset, e.name as employee, m.id, m.asset_id, m.employee_id, m.date_assign FROM assignments m INNER JOIN assets a ON m.asset_id = a.id INNER JOIN employees e ON m.employee_id = e.id");
+	public function listProduct()
+	{
+		$get = $this->db->query("SELECT id, name, price, img, description FROM product WHERE is_deleted IS NULL");
 		if ($get->num_rows() == 0) {
 			json([]);
 		}
@@ -136,18 +108,23 @@ class Model extends CI_Model {
 		$result = ['data' => []];
 		foreach ($get->result() as $key => $value) { $no++;
 			$id = $value->id;
+			$img = "<img src='".PATH_PRODUCT$value->img."' loading='lazy' alt='product'>";
 			$options = $this->createOptions($id);
 			if (!$options) {
 				json("failed create options");
 			}
 			$result['data'][$key] = [
 				$no,
-				$value->asset,
-				$value->employee,
-				$value->date_assign,
+				$value->name,
+				$value->price,
+				$img,
+				$value->description,
+				$value->created_at,
+				$value->created_by,
 				$options
 			];
 		}
 		json($result);
 	}
+	# list
 }
