@@ -396,7 +396,7 @@ class Backend extends CI_Controller {
 		if (!$upload) {
 			json(response(false, 400, 'failed upload'));
 		}
-		
+
 		$this->load->database();
 		# check category
 		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
@@ -517,4 +517,118 @@ class Backend extends CI_Controller {
 		json(response(true, 200, 'success, deleted'));
 	}
 	# product
+
+	# customer
+	public function customer()
+	{
+		$this->load([
+			'file' => 'module/customer/index'
+		]);
+	}
+	public function customerAdd()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$name  = post('name');
+		$email = post('email');
+		if (empty($name) || empty($email)) {
+            json(response(false, 400, 'bad request'));
+		}
+		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            json(response(false, 400, 'email not valid'));
+        }
+		$this->load->database();
+		$check = $this->db->query("SELECT id FROM customers WHERE email = ? AND is_deleted = ? LIMIT 1", [$email, null])->num_rows();
+		if ($check > 0) {
+			json(response(false, 400, 'customer already exist'));
+		}
+		$create = $this->db->insert('customers', [
+			'name'			=> $name,
+			'email'			=> $email,
+			'created_by'	=> session('user_name'),
+		]);
+		if (!$create) {
+			json(response(false, 500, 'failed'));
+		}
+		json(response(true, 200, 'success, created'));
+	}
+	public function customerId()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$id = post('id');
+		if (!$id) {
+			json(response(false, 400, 'bad request'));
+		}
+		$this->load->database();
+		$get = $this->db->query("SELECT id, name, email, username FROM customers WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null]);
+		if ($get->num_rows() == 0) {
+			json(response(false, 404, 'data not found'));
+		}
+		json(response(true, 200, 'success', $get->row()));
+	}
+	public function customerUpdate()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$id = post('id');
+		if (!$id) {
+			json(response(false, 400, 'bad request'));
+		}
+		$name  = post('name');
+		$email = post('email');
+		if (empty($name) || empty($email)) {
+            json(response(false, 400, 'bad request'));
+		}
+		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            json(response(false, 400, 'email not valid'));
+        }
+		$this->load->database();
+		$check = $this->db->query("SELECT id FROM customers WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		if ($check == 0) {
+			json(response(false, 400, 'customer not found'));
+		}
+		$update = $this->db->where('id', $id)->update('customers', [
+			'name'			=> $name,
+			'email'			=> $email,
+			'updated_at'	=> date('Y-m-d h:i:s'),
+			'updated_by'	=> session('user_name'),
+		]);
+		if (!$update) {
+			json(response(false, 500, 'failed'));
+		}
+		json(response(true, 200, 'success, updated'));
+	}
+	public function customerDelete()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$id = post('id');
+		if (!$id) {
+			json(response(false, 400, 'bad request'));
+		}
+		$this->load->database();
+		$check = $this->db->query("SELECT id FROM customers WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		if ($check == 0) {
+			json(response(false, 400, 'customer not found'));
+		}
+		$update = $this->db->where('id', $id)->update('customers', [
+			'is_deleted'	=> 1,
+			'deleted_at'	=> date('Y-m-d h:i:s'),
+			'deleted_by'	=> session('user_name'),
+		]);
+		if (!$update) {
+			json(response(false, 500, 'failed'));
+		}
+		json(response(true, 200, 'success, deleted'));
+	}
+	# customer
 }

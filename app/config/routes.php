@@ -40,4 +40,12 @@ $route = [
 	'product/update'			=> 'Backend/productUpdate',
 	'product/delete'			=> 'Backend/productDelete',
 	# product
+
+	# customer
+	'customer'					=> 'Backend/customer',
+	'customer/add'				=> 'Backend/customerAdd',
+	'customer/id'				=> 'Backend/customerId',
+	'customer/update'			=> 'Backend/customerUpdate',
+	'customer/delete'			=> 'Backend/customerDelete',
+	# customer
 ];
