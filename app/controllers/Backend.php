@@ -115,8 +115,9 @@ class Backend extends CI_Controller {
         if (empty($username) || empty($password)) {
             json(response(false, 400, 'bad request'));
 		}
+		$status = (int) post('status');
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM users WHERE email = ? AND is_deleted = ? LIMIT 1", [$email, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM users WHERE email = ? AND is_deleted IS NULL LIMIT 1", [$email])->num_rows();
 		if ($check > 0) {
 			json(response(false, 400, 'user already exist'));
 		}
@@ -125,12 +126,13 @@ class Backend extends CI_Controller {
 			'email'			=> $email,
 			'username'		=> $username,
 			'password'		=> password_hash($password, PASSWORD_DEFAULT),
+			'is_active'		=> $status,
 			'created_by'	=> session('user_name'),
 		]);
 		if (!$create) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, created'));
+		json(response(true, 201, 'success, created'));
 	}
 	public function userId()
 	{
@@ -143,11 +145,11 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$get = $this->db->query("SELECT id, name, email, username FROM users WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null]);
+		$get = $this->db->query("SELECT id, name, email, username, is_active FROM users WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id]);
 		if ($get->num_rows() == 0) {
 			json(response(false, 404, 'data not found'));
 		}
-		json(response(true, 200, 'success', $get->row()));
+		json(response(true, 201, 'success', $get->row()));
 	}
 	public function userUpdate()
 	{
@@ -172,8 +174,9 @@ class Backend extends CI_Controller {
         if (empty($username) || empty($password)) {
             json(response(false, 400, 'bad request'));
 		}
+		$status = (int) post('status');
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM users WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM users WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
 		if ($check == 0) {
 			json(response(false, 400, 'user not found'));
 		}
@@ -182,13 +185,14 @@ class Backend extends CI_Controller {
 			'email'			=> $email,
 			'username'		=> $username,
 			'password'		=> password_hash($password, PASSWORD_DEFAULT),
+			'is_active'		=> $status,
 			'updated_at'	=> date('Y-m-d h:i:s'),
 			'updated_by'	=> session('user_name'),
 		]);
 		if (!$update) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, updated'));
+		json(response(true, 201, 'success, updated'));
 	}
 	public function userDelete()
 	{
@@ -201,7 +205,7 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM users WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM users WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
 		if ($check == 0) {
 			json(response(false, 400, 'user not found'));
 		}
@@ -213,7 +217,7 @@ class Backend extends CI_Controller {
 		if (!$update) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, deleted'));
+		json(response(true, 201, 'success, deleted'));
 	}
 	# user
 
@@ -235,7 +239,7 @@ class Backend extends CI_Controller {
             json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM suppliers WHERE name = ? AND is_deleted = ? LIMIT 1", [$name, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM suppliers WHERE name = ? AND is_deleted IS NULL LIMIT 1", [$name, null])->num_rows();
 		if ($check > 0) {
 			json(response(false, 400, 'supplier already exist'));
 		}
@@ -246,7 +250,7 @@ class Backend extends CI_Controller {
 		if (!$create) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, created'));
+		json(response(true, 201, 'success, created'));
 	}
 	public function supplierId()
 	{
@@ -259,11 +263,11 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$get = $this->db->query("SELECT id, name FROM suppliers WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null]);
+		$get = $this->db->query("SELECT id, name FROM suppliers WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id]);
 		if ($get->num_rows() == 0) {
 			json(response(false, 404, 'data not found'));
 		}
-		json(response(true, 200, 'success', $get->row()));
+		json(response(true, 201, 'success', $get->row()));
 	}
 	public function supplierUpdate()
 	{
@@ -280,7 +284,7 @@ class Backend extends CI_Controller {
             json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM suppliers WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM suppliers WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
 		if ($check == 0) {
 			json(response(false, 400, 'supplier not found'));
 		}
@@ -292,7 +296,7 @@ class Backend extends CI_Controller {
 		if (!$update) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, updated'));
+		json(response(true, 201, 'success, updated'));
 	}
 	public function supplierDelete()
 	{
@@ -305,7 +309,7 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM suppliers WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM suppliers WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
 		if ($check == 0) {
 			json(response(false, 400, 'supplier not found'));
 		}
@@ -317,7 +321,7 @@ class Backend extends CI_Controller {
 		if (!$update) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, deleted'));
+		json(response(true, 201, 'success, deleted'));
 	}
 	# supplier
 
@@ -339,7 +343,7 @@ class Backend extends CI_Controller {
             json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM category WHERE name = ? AND is_deleted = ? LIMIT 1", [$name, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM category WHERE name = ? AND is_deleted IS NULL LIMIT 1", [$name, null])->num_rows();
 		if ($check > 0) {
 			json(response(false, 400, 'category already exist'));
 		}
@@ -350,7 +354,7 @@ class Backend extends CI_Controller {
 		if (!$create) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, created'));
+		json(response(true, 201, 'success, created'));
 	}
 	public function categoryId()
 	{
@@ -363,11 +367,11 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$get = $this->db->query("SELECT id, name FROM category WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null]);
+		$get = $this->db->query("SELECT id, name FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id]);
 		if ($get->num_rows() == 0) {
 			json(response(false, 404, 'data not found'));
 		}
-		json(response(true, 200, 'success', $get->row()));
+		json(response(true, 201, 'success', $get->row()));
 	}
 	public function categoryUpdate()
 	{
@@ -384,7 +388,7 @@ class Backend extends CI_Controller {
             json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
 		if ($check == 0) {
 			json(response(false, 400, 'category not found'));
 		}
@@ -396,7 +400,7 @@ class Backend extends CI_Controller {
 		if (!$update) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, updated'));
+		json(response(true, 201, 'success, updated'));
 	}
 	public function categoryDelete()
 	{
@@ -409,7 +413,7 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
 		if ($check == 0) {
 			json(response(false, 400, 'category not found'));
 		}
@@ -421,7 +425,7 @@ class Backend extends CI_Controller {
 		if (!$update) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, deleted'));
+		json(response(true, 201, 'success, deleted'));
 	}
 	# category
 
@@ -453,12 +457,12 @@ class Backend extends CI_Controller {
 
 		$this->load->database();
 		# check category
-		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
 		if ($category == 0) {
 			json(response(false, 404, 'category not found'));
 		}
 
-		$check = $this->db->query("SELECT id FROM product WHERE name = ? AND category_id = ? AND is_deleted = ? LIMIT 1", [$name, $category_id, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM product WHERE name = ? AND category_id = ? AND is_deleted IS NULL LIMIT 1", [$name, $category_id, null])->num_rows();
 		if ($check > 0) {
 			json(response(false, 400, 'product already exist'));
 		}
@@ -473,7 +477,7 @@ class Backend extends CI_Controller {
 		if (!$create) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, created'));
+		json(response(true, 201, 'success, created'));
 	}
 	public function productId()
 	{
@@ -487,16 +491,16 @@ class Backend extends CI_Controller {
 		}
 		$this->load->database();
 		# check category
-		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
 		if ($category == 0) {
 			json(response(false, 404, 'category not found'));
 		}
 
-		$get = $this->db->query("SELECT id, name, category_id FROM product WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null]);
+		$get = $this->db->query("SELECT id, name, category_id FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id]);
 		if ($get->num_rows() == 0) {
 			json(response(false, 404, 'data not found'));
 		}
-		json(response(true, 200, 'success', $get->row()));
+		json(response(true, 201, 'success', $get->row()));
 	}
 	public function productUpdate()
 	{
@@ -523,12 +527,12 @@ class Backend extends CI_Controller {
 		$this->load->database();
 		
 		# check category
-		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
 		if ($category == 0) {
 			json(response(false, 404, 'category not found'));
 		}
 
-		$check = $this->db->query("SELECT id FROM product WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
 		if ($check == 0) {
 			json(response(false, 400, 'product not found'));
 		}
@@ -543,7 +547,7 @@ class Backend extends CI_Controller {
 		if (!$update) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, updated'));
+		json(response(true, 201, 'success, updated'));
 	}
 	public function productDelete()
 	{
@@ -556,7 +560,7 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM product WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
 		if ($check == 0) {
 			json(response(false, 400, 'product not found'));
 		}
@@ -568,7 +572,7 @@ class Backend extends CI_Controller {
 		if (!$update) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, deleted'));
+		json(response(true, 201, 'success, deleted'));
 	}
 	# product
 
@@ -594,7 +598,7 @@ class Backend extends CI_Controller {
             json(response(false, 400, 'email not valid'));
         }
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM customers WHERE email = ? AND is_deleted = ? LIMIT 1", [$email, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM customers WHERE email = ? AND is_deleted IS NULL LIMIT 1", [$email])->num_rows();
 		if ($check > 0) {
 			json(response(false, 400, 'customer already exist'));
 		}
@@ -606,7 +610,7 @@ class Backend extends CI_Controller {
 		if (!$create) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, created'));
+		json(response(true, 201, 'success, created'));
 	}
 	public function customerId()
 	{
@@ -619,11 +623,11 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$get = $this->db->query("SELECT id, name, email, username FROM customers WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null]);
+		$get = $this->db->query("SELECT id, name, email, username FROM customers WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id]);
 		if ($get->num_rows() == 0) {
 			json(response(false, 404, 'data not found'));
 		}
-		json(response(true, 200, 'success', $get->row()));
+		json(response(true, 201, 'success', $get->row()));
 	}
 	public function customerUpdate()
 	{
@@ -644,7 +648,7 @@ class Backend extends CI_Controller {
             json(response(false, 400, 'email not valid'));
         }
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM customers WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM customers WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
 		if ($check == 0) {
 			json(response(false, 400, 'customer not found'));
 		}
@@ -657,7 +661,7 @@ class Backend extends CI_Controller {
 		if (!$update) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, updated'));
+		json(response(true, 201, 'success, updated'));
 	}
 	public function customerDelete()
 	{
@@ -670,7 +674,7 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM customers WHERE id = ? AND is_deleted = ? LIMIT 1", [$id, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM customers WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
 		if ($check == 0) {
 			json(response(false, 400, 'customer not found'));
 		}
@@ -682,7 +686,7 @@ class Backend extends CI_Controller {
 		if (!$update) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 200, 'success, deleted'));
+		json(response(true, 201, 'success, deleted'));
 	}
 	# customer
 }

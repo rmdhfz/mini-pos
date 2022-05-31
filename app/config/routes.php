@@ -34,7 +34,7 @@ $route = [
 	# supplier
 
 	# category
-	'category'					=> 'Backend/category',
+	'kategori'					=> 'Backend/category',
 	'category/add'				=> 'Backend/categoryAdd',
 	'category/id'				=> 'Backend/categoryId',
 	'category/update'			=> 'Backend/categoryUpdate',

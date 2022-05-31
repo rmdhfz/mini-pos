@@ -370,7 +370,7 @@ if (!function_exists('salam')) {
     } elseif ($jam >= '14:00' && $jam < '18:00') {
       $salam = 'Selamat Sore!';
     } else {
-      $salam = 'Good Malam!';
+      $salam = 'Selamat Malam!';
     }
     return $salam;
   }

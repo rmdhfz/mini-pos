@@ -10,7 +10,7 @@ class Model extends CI_Model {
         $this->init();
         $this->load->database();
     }
-    
+
     private function init() 
     {
 		$this->load->library('session');
@@ -32,7 +32,7 @@ class Model extends CI_Model {
 	# list
 	public function listUser(){
 		$this->load->database();
-		$get = $this->db->query("SELECT * FROM users");
+		$get = $this->db->query("SELECT id, name, email, username, is_active, created_at, created_by FROM users WHERE is_deleted IS NULL");
 		if ($get->num_rows() == 0) {
 			json([]);
 		}
@@ -40,6 +40,7 @@ class Model extends CI_Model {
 		$result = ['data' => []];
 		foreach ($get->result() as $key => $value) { $no++;
 			$id = $value->id;
+			$status = (int) ($value->is_active) == 1 ? "Aktif" : "Tidak Aktif";
 			$options = $this->createOptions($id);
 			if (!$options) {
 				json("failed create options");
@@ -49,6 +50,9 @@ class Model extends CI_Model {
 				$value->name,
 				$value->email,
 				$value->username,
+				$status,
+				$value->created_at,
+				$value->created_by,
 				$options
 			];
 		}
@@ -108,7 +112,7 @@ class Model extends CI_Model {
 		$result = ['data' => []];
 		foreach ($get->result() as $key => $value) { $no++;
 			$id = $value->id;
-			$img = "<img src='".PATH_PRODUCT$value->img."' loading='lazy' alt='product'>";
+			$img = "<img src='".PATH_PRODUCT.$value->img."' loading='lazy' alt='product'>";
 			$options = $this->createOptions($id);
 			if (!$options) {
 				json("failed create options");
