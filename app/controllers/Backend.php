@@ -239,7 +239,7 @@ class Backend extends CI_Controller {
             json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM suppliers WHERE name = ? AND is_deleted IS NULL LIMIT 1", [$name, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM suppliers WHERE name = ? AND is_deleted IS NULL LIMIT 1", [$name])->num_rows();
 		if ($check > 0) {
 			json(response(false, 400, 'supplier already exist'));
 		}
@@ -343,7 +343,7 @@ class Backend extends CI_Controller {
             json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM category WHERE name = ? AND is_deleted IS NULL LIMIT 1", [$name, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM category WHERE name = ? AND is_deleted IS NULL LIMIT 1", [$name])->num_rows();
 		if ($check > 0) {
 			json(response(false, 400, 'category already exist'));
 		}

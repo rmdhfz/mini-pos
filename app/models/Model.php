@@ -75,6 +75,8 @@ class Model extends CI_Model {
 			$result['data'][$key] = [
 				$no,
 				$value->name,
+				$value->created_at,
+				$value->created_by,
 				$options
 			];
 		}
@@ -97,6 +99,8 @@ class Model extends CI_Model {
 			$result['data'][$key] = [
 				$no,
 				$value->name,
+				$value->created_at,
+				$value->created_by,
 				$options
 			];
 		}

@@ -7,7 +7,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h5>Data Supplier</h5>
-                            <button type="button" class="btn btn-sm btn-flat btn-danger waves-effect" data-toggle="modal" data-target="#modal-supplier" data-backdrop="static" data-keyboard="false" onclick="ClearFormData($('#form-supplier'));" style="border-radius: 21px;"><i class="fas fa-plus" aria-hidden="true"></i> Add Supplier </button>
+                            <button type="button" class="btn btn-sm btn-flat btn-danger waves-effect" data-toggle="modal" data-target="#modal-supplier" data-backdrop="static" data-keyboard="false" onclick="ClearFormData($('#form-supplier'));" style="border-radius: 21px;"><i class="fas fa-plus" aria-hidden="true"></i> Tambah Supplier </button>
                         </div>
                         <div class="card-block">
                             <div class="dt-responsive table-responsive">
@@ -15,14 +15,18 @@
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Name</th>
+                                            <th>Nama</th>
+                                            <th>Tanggal Dibuat</th>
+                                            <th>Dibuat Oleh</th>
                                             <th>Opsi</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Name</th>
+                                            <th>Nama</th>
+                                            <th>Tanggal Dibuat</th>
+                                            <th>Dibuat Oleh</th>
                                             <th>Opsi</th>
                                         </tr>
                                     </tfoot>
@@ -49,7 +53,7 @@
                     <form id="form-supplier" name="form-supplier" accept-charset="utf-8" autocomplete="off" method="post">
                         <input type="hidden" name="id" id="id" />
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label"> Name </label>
+                            <label class="col-sm-2 col-form-label"> Nama </label>
                             <div class="col-sm-10">
                                 <input type="text"name="name"id="name"class="form-control"required="1"placeholder="nama supplier"pattern="[a-zA-Z0-9\s]{4,35}"minlength="4"maxlength="35"data-toggle="tooltip"data-placement="top"title="nama supplier"/>
                             </div>
@@ -82,9 +86,9 @@
             event.preventDefault();
             let id = $("#id").val(), url;
             if (id) {
-                url = "supplier/edit";
+                url = "supplier/update";
             }else{
-                url = "supplier/save";
+                url = "supplier/add";
             }
             if (confirm("Is the input data correct ?")) {
                 $.post(url, $(this).serialize()).done((res, xhr, status) => {

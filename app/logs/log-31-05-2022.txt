@@ -261,3 +261,17 @@ ERROR - 31-05-2022 17:59:18 --> Query error: You have an error in your SQL synta
 ERROR - 31-05-2022 17:59:53 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
 ERROR - 31-05-2022 17:59:53 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
 ERROR - 31-05-2022 17:59:53 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 31-05-2022 18:06:02 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? AND is_deleted IS NULL LIMIT 1' at line 1 - Invalid query: SELECT id FROM suppliers WHERE name = ? AND is_deleted IS NULL LIMIT 1  --> IP Address : ::1
+ERROR - 31-05-2022 18:06:04 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 31-05-2022 18:06:04 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 31-05-2022 18:06:04 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 31-05-2022 18:06:05 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? AND is_deleted IS NULL LIMIT 1' at line 1 - Invalid query: SELECT id FROM suppliers WHERE name = ? AND is_deleted IS NULL LIMIT 1  --> IP Address : ::1
+ERROR - 31-05-2022 18:06:36 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 31-05-2022 18:06:36 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 31-05-2022 18:06:36 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 31-05-2022 18:06:40 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 31-05-2022 18:06:40 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 31-05-2022 18:06:40 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 31-05-2022 18:06:56 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 31-05-2022 18:06:56 --> 404 Page Not Found: Static/bower_components  --> IP Address : ::1
+ERROR - 31-05-2022 18:06:56 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
