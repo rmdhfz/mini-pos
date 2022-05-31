@@ -8,4 +8,12 @@ $route = [
 	'verify'				=>	'Frontend/login',
 	'dashboard'				=>	'Backend',
 	'logout'				=>	'Backend/logout',
+
+	# user
+	'user'					=> 'Backend/user',
+	'user/add'				=> 'Backend/userAdd',
+	'user/id'				=> 'Backend/userId',
+	'user/update'			=> 'Backend/userUpdate',
+	'user/delete'			=> 'Backend/userDelete',
+	# user
 ];

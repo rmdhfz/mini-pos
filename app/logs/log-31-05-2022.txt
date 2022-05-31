@@ -151,3 +151,12 @@ ERROR - 31-05-2022 13:07:45 --> 404 Page Not Found: Total/produk  --> IP Address
 ERROR - 31-05-2022 13:08:16 --> 404 Page Not Found: Total/user  --> IP Address : ::1
 ERROR - 31-05-2022 13:08:16 --> 404 Page Not Found: Total/produk  --> IP Address : ::1
 ERROR - 31-05-2022 13:08:16 --> 404 Page Not Found: Total/supplier  --> IP Address : ::1
+ERROR - 31-05-2022 13:12:14 --> 404 Page Not Found: Total/user  --> IP Address : ::1
+ERROR - 31-05-2022 13:12:14 --> 404 Page Not Found: Total/supplier  --> IP Address : ::1
+ERROR - 31-05-2022 13:12:14 --> 404 Page Not Found: Total/produk  --> IP Address : ::1
+ERROR - 31-05-2022 13:12:31 --> 404 Page Not Found: User/index  --> IP Address : ::1
+ERROR - 31-05-2022 15:31:56 --> Severity: Warning --> include(module/user/index.php): failed to open stream: No such file or directory D:\Developments\web\htdocs\minipos\app\views\backend\index.php 331  --> IP Address : ::1
+ERROR - 31-05-2022 15:31:56 --> Severity: Warning --> include(): Failed opening 'module/user/index.php' for inclusion (include_path='D:\Developments\web\php\PEAR') D:\Developments\web\htdocs\minipos\app\views\backend\index.php 331  --> IP Address : ::1
+ERROR - 31-05-2022 16:38:26 --> 404 Page Not Found: Total/user  --> IP Address : ::1
+ERROR - 31-05-2022 16:38:26 --> 404 Page Not Found: Total/supplier  --> IP Address : ::1
+ERROR - 31-05-2022 16:38:26 --> 404 Page Not Found: Total/produk  --> IP Address : ::1
