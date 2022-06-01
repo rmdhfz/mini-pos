@@ -1238,5 +1238,35 @@ class Backend extends CI_Controller {
 		$this->load->model('model');
 		$this->model->reportPembelianPerproduk($from, $to, $product);
 	}
+
+	public function laporanPenjualan()
+	{
+		$this->load([
+			'file' => 'module/report/sell/index'
+		]);
+	}
+	public function reportPenjualan()
+	{	
+		$from = post('from').POSTFIX_START_REPORT;
+		$to = post('to').POSTFIX_END_REPORT;
+		$this->load->model('model');
+		$this->model->reportPenjualan($from, $to);
+	}
+
+	public function laporanPenjualanPerProduk()
+	{
+		$this->load([
+			'file' => 'module/report/sell_product/index'
+		]);
+	}
+	public function reportPenjualanPerproduk()
+	{	
+		$from = post('from').POSTFIX_START_REPORT;
+		$to = post('to').POSTFIX_END_REPORT;
+		$product = post('product_id');
+
+		$this->load->model('model');
+		$this->model->reportPenjualanPerproduk($from, $to, $product);
+	}
 	# report
 }
