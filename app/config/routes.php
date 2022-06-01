@@ -9,6 +9,10 @@ $route = [
 	'dashboard'				=>	'Backend',
 	'logout'				=>	'Backend/logout',
 
+	'monitoring'			=>	'Backend/monitoring',
+	'monitoring/list'		=>	'Backend/monitoringList',
+	'monitoring/kick'		=>	'Backend/monitoringKick',
+
 	# total
 	'total/user'			=> 'Backend/totalUser',
 	'total/supplier'		=> 'Backend/totalSupplier',

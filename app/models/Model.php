@@ -33,6 +33,40 @@ class Model extends CI_Model {
 		<button id="delete" data-id="'.$id.'" class="btn btn-flat btn-sm btn-danger"> hapus </button>';
 	}
 
+	public function monitoringList()
+	{
+		$get = $this->db->query("
+			SELECT
+			
+			u.name as user,
+			p.*
+
+			FROM history_login p
+			INNER JOIN users u ON p.user_id = p.id");
+		if ($get->num_rows() == 0) {
+			json([]);
+		}
+		$no = 0;
+		$result = ['data' => []];
+		foreach ($get->result() as $key => $value) { $no++;
+			$id = $value->ip_address;
+			$options = '<button id="kick" data-id="'.$id.'" class="btn btn-flat btn-sm btn-danger"> keluarkan </button>';
+			if (!$options) {
+				json("failed create options");
+			}
+			$result['data'][$key] = [
+				$no,
+				$value->user,
+				$value->os,
+				$value->browser,
+				$value->ip_address,
+				change_format_date($value->last_login),
+				$options
+			];
+		}
+		json($result);
+	}
+
 	# list
 	public function listUser()
 	{

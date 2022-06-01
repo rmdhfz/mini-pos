@@ -25,6 +25,40 @@ class Backend extends CI_Controller {
 		$this->load->view('backend/index', $params);
 	}
 
+	public function monitoring()
+	{
+		$this->load([
+			'file' => 'module/monitoring/index',
+		]);
+	}
+
+	public function monitoringList()
+	{
+		$this->load->model('model');
+		$this->model->monitoringList();
+	}
+
+	public function monitoringKick()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$ip_address = post('ip_address');
+		$this->load->database();
+		$check = $this->db->query("SELECT id FROM history_login WHERE ip_address = ? LIMIT 1", [$ip_address])->num_rows();
+
+		if ($check == 0) {
+			json(response(false, 404, 'data not found'));
+		}
+
+		$delete = $this->db->where('ip_address', $ip_address)->delete('sessions');
+		if (!$delete) {
+			json(response(false, 500, 'failed delete session'));
+		}
+		json(response(true, 200, 'success'));
+	}
+
 	private function getTotal($table)
 	{
 		if (!$table) {

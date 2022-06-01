@@ -59,6 +59,14 @@
             </li>
         </ul>
     </li>
+    <li>
+        <a href="<?php echo site_url('monitoring') ?>" class="waves-effect waves-dark">
+            <span class="pcoded-micon">
+                <i class="feather icon-monitor" aria-hidden="true"></i>
+            </span>
+            <span class="pcoded-mtext"> Monitoring Login </span>
+        </a>
+    </li>
     <div class="pcoded-navigation-label">OTHER NAVIGATION</div>
     <li>
         <a href="javascript:void(0)" id="keluar" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="keluar">
