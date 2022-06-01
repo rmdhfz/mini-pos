@@ -30,8 +30,8 @@ class Model extends CI_Model {
 	}
 
 	# list
-	public function listUser(){
-		$this->load->database();
+	public function listUser()
+	{
 		$get = $this->db->query("SELECT id, name, email, username, is_active, created_at, created_by FROM users WHERE is_deleted IS NULL");
 		if ($get->num_rows() == 0) {
 			json([]);
@@ -51,7 +51,7 @@ class Model extends CI_Model {
 				$value->email,
 				$value->username,
 				$status,
-				$value->created_at,
+				change_format_date($value->created_at),
 				$value->created_by,
 				$options
 			];
@@ -75,7 +75,7 @@ class Model extends CI_Model {
 			$result['data'][$key] = [
 				$no,
 				$value->name,
-				$value->created_at,
+				change_format_date($value->created_at),
 				$value->created_by,
 				$options
 			];
@@ -99,7 +99,7 @@ class Model extends CI_Model {
 			$result['data'][$key] = [
 				$no,
 				$value->name,
-				$value->created_at,
+				change_format_date($value->created_at),
 				$value->created_by,
 				$options
 			];
@@ -141,7 +141,82 @@ class Model extends CI_Model {
 				$value->price,
 				$value->description,
 				$img,
-				$value->created_at,
+				change_format_date($value->created_at),
+				$value->created_by,
+				$options
+			];
+		}
+		json($result);
+	}
+	public function listCustomer()
+	{
+		$get = $this->db->query("SELECT id, name, email, is_active, created_at, created_by FROM customers WHERE is_deleted IS NULL");
+		if ($get->num_rows() == 0) {
+			json([]);
+		}
+		$no = 0;
+		$result = ['data' => []];
+		foreach ($get->result() as $key => $value) { $no++;
+			$id = $value->id;
+			$status = (int) ($value->is_active) == 1 ? "Aktif" : "Tidak Aktif";
+			$options = $this->createOptions($id);
+			if (!$options) {
+				json("failed create options");
+			}
+			$result['data'][$key] = [
+				$no,
+				$value->name,
+				$value->email,
+				$status,
+				change_format_date($value->created_at),
+				$value->created_by,
+				$options
+			];
+		}
+		json($result);
+	}
+	public function listPurchase()
+	{
+		$get = $this->db->query("
+			SELECT
+			
+			p.id, p.qty, p.total, p.note,
+			p.created_at, p.created_by,
+			s.name as supplier,
+			k.name as category,
+			pd.name as product
+
+			FROM purchase p
+			INNER JOIN suppliers s ON p.supplier_id = s.id
+			INNER JOIN category k ON p.category_id = k.id
+			INNER JOIN product pd ON p.product_id = pd.id
+
+			WHERE
+			p.is_deleted IS NULL AND
+			k.is_deleted IS NULL AND
+			pd.is_deleted IS NULL
+		");
+		if ($get->num_rows() == 0) {
+			json([]);
+		}
+		$no = 0;
+		$result = ['data' => []];
+		foreach ($get->result() as $key => $value) { $no++;
+			$id = $value->id;
+			$note = ($value->note) == "" ? "-" : $value->note;
+			$options = $this->createOptions($id);
+			if (!$options) {
+				json("failed create options");
+			}
+			$result['data'][$key] = [
+				$no,
+				$value->supplier,
+				$value->category,
+				$value->product,
+				$value->qty,
+				$value->total,
+				$note,
+				change_format_date($value->created_at),
 				$value->created_by,
 				$options
 			];

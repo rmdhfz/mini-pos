@@ -210,7 +210,7 @@ if (!function_exists('change_format_date')) {
   function change_format_date($date)
   {
     if ($date) {
-      return date('d-m-Y H:i:s', strtotime(str_replace('-', '/', $date)));
+      return date('d-M-Y H:i:s', strtotime(str_replace('-', '/', $date)));
     } else {
       return '-';
     }

@@ -29,3 +29,7 @@ define("SALT_CUSTOM", "MINIPOS@2022");
 define("APP_NAME", "Mini Pos");
 define("GOOGLE_SITE_VERIFICATION", "");
 define("PATH_PRODUCT", "static/upload/product/");
+
+define("INSTAGRAM", "https://instagram.com/hfzrmd");
+define("LINKEDIN", "https://linkedin.com/in/hfzrmd");
+define("GITHUB", "https://github.com/rmdhfz");

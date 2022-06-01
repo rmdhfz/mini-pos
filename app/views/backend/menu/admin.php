@@ -48,12 +48,12 @@
         </a>
         <ul class="pcoded-submenu">
             <li>
-                <a href="<?php echo site_url('transaksi/pembelian') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Lihat Data Transaksi Pembelian">
+                <a href="<?php echo site_url('pembelian') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Lihat Data Transaksi Pembelian">
                     <span class="pcoded-mtext">Data Pembelian</span>
                 </a>
             </li>
             <li>
-                <a href="<?php echo site_url('transaksi/penjualan') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Lihat Data Transaksi Penjualan">
+                <a href="<?php echo site_url('penjualan') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Lihat Data Transaksi Penjualan">
                     <span class="pcoded-mtext">Data Penjualan</span>
                 </a>
             </li>

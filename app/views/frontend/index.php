@@ -13,7 +13,7 @@
   <link href="https://www.google.com" rel="dns-prefetch" />
   <link href="https://fonts.googleapis.com" rel="dns-prefetch" />
   <link href="https://cdnjs.cloudflare.com" rel="dns-prefetch" />
-  <!-- <link rel="shortcut icon" href="<?php echo base_url('favicon.ico');?>" type="image/png" /> -->
+  <link rel="shortcut icon" href="<?php echo base_url('static/assets/images/logo.png');?>" type="image/png" />
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>

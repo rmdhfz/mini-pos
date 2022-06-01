@@ -7,7 +7,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h5>Data Kategori</h5>
-                            <button type="button" class="btn btn-sm btn-flat btn-danger waves-effect" data-toggle="modal" data-target="#modal-category" data-backdrop="static" data-keyboard="false" onclick="ClearFormData($('#form-category'));" style="border-radius: 21px;"><i class="fas fa-plus" aria-hidden="true"></i> Tambah Kategori </button>
+                            <button type="button" class="btn btn-sm btn-flat btn-success waves-effect" data-toggle="modal" data-target="#modal-category" data-backdrop="static" data-keyboard="false" onclick="ClearFormData($('#form-category'));" style="border-radius: 21px;"><i class="fas fa-plus" aria-hidden="true"></i> Tambah Kategori </button>
                         </div>
                         <div class="card-block">
                             <div class="dt-responsive table-responsive">
@@ -42,7 +42,7 @@
 <div class="modal fade modal-flex" id="modal-category"  category="dialog">
     <div class="modal-dialog" category="document">
         <div class="modal-content">
-            <div class="modal-header" style="background-color: #dc3545;">
+            <div class="modal-header" style="background-color: #2ed8b6;">
                 <h4 class="modal-title" style="color: white;">Form Kategori</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>

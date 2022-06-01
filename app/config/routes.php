@@ -15,10 +15,13 @@ $route = [
 	'list/category'			=>	'Backend/listCategory',
 	'list/product'			=>	'Backend/listProduct',
 	'list/customer'			=>	'Backend/listCustomer',
+	'list/purchase'			=>	'Backend/listPurchase',
 	# list
 
 	# data
 	'data/category'			=>	'Backend/dataCategory',
+	'data/supplier'			=>	'Backend/dataSupplier',
+	'data/product'			=>	'Backend/dataProduct',
 	# data
 
 	# user
@@ -54,10 +57,18 @@ $route = [
 	# product
 
 	# customer
-	'customer'					=> 'Backend/customer',
+	'pelanggan'					=> 'Backend/customer',
 	'customer/add'				=> 'Backend/customerAdd',
 	'customer/id'				=> 'Backend/customerId',
 	'customer/update'			=> 'Backend/customerUpdate',
 	'customer/delete'			=> 'Backend/customerDelete',
 	# customer
+
+	# purchase
+	'pembelian'					=> 'Backend/purchase',	
+	'purchase/add'				=> 'Backend/purchaseAdd',
+	'purchase/id'				=> 'Backend/purchaseId',
+	'purchase/update'			=> 'Backend/purchaseUpdate',
+	'purchase/delete'			=> 'Backend/purchaseDelete'
+	# purchase
 ];

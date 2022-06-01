@@ -177,7 +177,7 @@
                 height:60px;
                 bottom:40px;
                 right:40px;
-                background-color:#dc3545 !important;
+                background-color:#2ed8b6 !important;
                 color:#FFF;
                 border-radius:50px;
                 text-align:center;
@@ -329,9 +329,21 @@
                         <div class="pcoded-inner-content">
                             <?php $file .= ".php"; include $file;?>
                             <center>  
+                                <small>
+                                    Created by Hafiz Ramadhan.
+                                </small> <br>
                               <small><i>elapsed time : {elapsed_time} ms - memory usage : {memory_usage}</i></small>
                               <br> 
-                              <small> &copy; 2022 <?php echo APP_NAME; ?> </small>
+                              <small> &copy; 2022 <?php echo APP_NAME; ?> </small> <br>
+                              <a href="<?php echo INSTAGRAM; ?>" target="_blank">
+                                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                              </a>
+                              <a href="<?php echo LINKEDIN; ?>" target="_blank">
+                                  <i class="fab fa-linkedin" aria-hidden="true"></i>
+                              </a>
+                              <a href="<?php echo GITHUB; ?>" target="_blank">
+                                  <i class="fab fa-github" aria-hidden="true"></i>
+                              </a>
                             </center> <br>
                         </div>
                     </div>
