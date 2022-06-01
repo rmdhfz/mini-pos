@@ -116,11 +116,7 @@
         $("#form-user").submit(function(event) {
             event.preventDefault();
             let id = $("#id").val(), url;
-            if (id) {
-                url = "user/update";
-            }else{
-                url = "user/add";
-            }
+            id === "" ? url = "user/add" : url = "user/update";
             if (confirm("Is the input data correct ?")) {
                 $.post(url, $(this).serialize()).done((res, xhr, status) => {
                     ReloadTable(table);

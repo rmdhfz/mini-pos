@@ -17,6 +17,10 @@ $route = [
 	'list/customer'			=>	'Backend/listCustomer',
 	# list
 
+	# data
+	'data/category'			=>	'Backend/dataCategory',
+	# data
+
 	# user
 	'user'					=> 'Backend/user',
 	'user/add'				=> 'Backend/userAdd',
@@ -42,7 +46,7 @@ $route = [
 	# category
 
 	# product
-	'product'					=> 'Backend/product',
+	'produk'					=> 'Backend/product',
 	'product/add'				=> 'Backend/productAdd',
 	'product/id'				=> 'Backend/productId',
 	'product/update'			=> 'Backend/productUpdate',

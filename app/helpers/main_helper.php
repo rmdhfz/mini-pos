@@ -84,7 +84,7 @@ if (!function_exists('upload_action')) {
       /*jika file sudah ada maka tinggal di overwrite saja*/
       $config = [
         'upload_path'               => './' . $path,
-        'allowed_types'             => "pdf|jpg|jpeg|png",
+        'allowed_types'             => "pdf|jpg|jpeg|png|webp",
         'encrypt_name'              => true,
         'remove_spaces'             => true,
         'detect_mime'               => true,

@@ -21,7 +21,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/login-style.min.css'); ?>" media="screen"/>
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('static/assets/css/login-style.min.css'); ?>" media="screen"/>
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('static/assets/css/loading.css') ?>" media="screen"/>
 </head>
 <body id="body">
@@ -53,7 +53,7 @@
             </div>
           </div>
           <div class="workinghny-left-img">
-            <img loading="lazy" src="<?php echo base_url('assets/images/background-login.png') ?>" draggable="false" class="img-responsive" />
+            <img loading="lazy" src="<?php echo base_url('static/assets/images/background-login.png') ?>" draggable="false" class="img-responsive" />
           </div>
         </div>
       </div>

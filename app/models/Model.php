@@ -108,7 +108,20 @@ class Model extends CI_Model {
 	}
 	public function listProduct()
 	{
-		$get = $this->db->query("SELECT id, name, price, img, description FROM product WHERE is_deleted IS NULL");
+		$get = $this->db->query("SELECT 
+			p.id, 
+			p.name,
+			p.price, 
+			p.img, 
+			p.description, 
+			p.created_at, 
+			p.created_by,
+			c.name as category
+
+			FROM product p 
+			INNER JOIN category c ON p.category_id = c.id
+			WHERE p.is_deleted IS NULL");
+
 		if ($get->num_rows() == 0) {
 			json([]);
 		}
@@ -116,7 +129,7 @@ class Model extends CI_Model {
 		$result = ['data' => []];
 		foreach ($get->result() as $key => $value) { $no++;
 			$id = $value->id;
-			$img = "<img src='".PATH_PRODUCT.$value->img."' loading='lazy' alt='product'>";
+			$img = "<img class='img-thumbnail' draggable='false' src='".PATH_PRODUCT.$value->img."' loading='lazy' alt='product'>";
 			$options = $this->createOptions($id);
 			if (!$options) {
 				json("failed create options");
@@ -124,9 +137,10 @@ class Model extends CI_Model {
 			$result['data'][$key] = [
 				$no,
 				$value->name,
+				$value->category,
 				$value->price,
-				$img,
 				$value->description,
+				$img,
 				$value->created_at,
 				$value->created_by,
 				$options

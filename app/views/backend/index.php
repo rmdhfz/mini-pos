@@ -33,8 +33,8 @@
         <link href="https://fonts.googleapis.com" rel="dns-prefetch" />
         <link href="https://cdnjs.cloudflare.com" rel="dns-prefetch" />
 
-        <link rel="icon" href="static/assets/images/hotspot.png" type="image/x-icon" />
-        <link rel="shortcut icon" href="static/assets/images/hotspot.png" type="image/x-icon" />
+        <link rel="icon" href="static/assets/images/logo.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="static/assets/images/logo.png" type="image/x-icon" />
 
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" media="screen, projection" />
         <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet" media="screen, projection" />
@@ -50,9 +50,9 @@
         <link rel="stylesheet" type="text/css" href="static/assets/css/select2.min.css" media="screen, projection" />
 
         <link rel="stylesheet" type="text/css" href="static/assets/css/jquery-ui.min.css" media="screen, projection" />
-        <link rel="stylesheet" type="text/css" href="static/bower_components/datatables.net-bs4/css/dataTables.bootstrap4.min.css" media="screen, projection" />
+        <link rel="stylesheet" type="text/css" href="static/assets/datatables.net-bs4/css/dataTables.bootstrap4.min.css" media="screen, projection" />
         <link rel="stylesheet" type="text/css" href="static/assets/pages/data-table/css/buttons.dataTables.min.css" media="screen, projection" />
-        <link rel="stylesheet" type="text/css" href="static/bower_components/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" media="screen, projection" />
+        <link rel="stylesheet" type="text/css" href="static/assets/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" media="screen, projection" />
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -61,11 +61,11 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
         <script importance="low" src="static/jquery.min.js"></script>
-        <script importance="low" src="assets/js/jquery-ui.min.js"></script>
-        <script importance="low" src="static/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script importance="low" src="static/bower_components/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-        <script importance="low" src="static/bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-        <script importance="low" src="static/bower_components/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+        <script importance="low" src="static/assets/js/jquery-ui.min.js"></script>
+        <script importance="low" src="static/assets/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script importance="low" src="static/assets/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <script importance="low" src="static/assets/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script importance="low" src="static/assets/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
         <noscript> "<meta http-equiv="refresh" content="0 URL=<?php echo site_url('noscript'); ?>" />"</noscript>
         <style type="text/css" media="screen, projection">
             .loader {
@@ -198,7 +198,7 @@
         <script src="static/assets/js/select2.min.js"></script>
         <script>
             var url, safe, timer, style = "color: #e81d17;" + "font-size: 40px;" + "font-weight: bold;" + "text-shadow: 1px 1px 5px black;" + "filter: dropshadow(color=rgb(249, 162, 34), offx=1, offy=1);", start_time = new Date().getTime(); console.log("%cJangan Menempelkan apapun disini!", style);
-            function notif(title, type, message){
+            function notif(title = 'Infomation', type = 'success', message){
               sweetAlert({ title: title, type: type, text: message, timer: 1500, showConfirmButton: false });
             }
             function safeURL(url){
@@ -214,12 +214,11 @@
             function ClearFormData(id){
                 $(id)[0].reset();
                 $("#id").val("");
+                $("textarea").text('');
                 $("#input-edit").val("");
                 $("select").trigger('change');
-                $("textarea").text('');
+                $("#preview").removeAttr('src');
                 $(".modal-footer").find('button[type=button]').text('submit');
-                $("#action").val('save');
-                console.log("Action: save");
             }
             function ReloadTable(id){
                 id.ajax.reload();
@@ -278,7 +277,7 @@
                     <div class="navbar-container container-fluid">
                         <ul class="nav-left" style="margin-left: 1rem;">
                             <li>
-                                <img importance="low" loading="lazy" src="<?php echo site_url('assets/images/logo.png');?>" draggable="false" style="height: 2rem; width: 3rem;" alt="profile-image" />
+                                <img importance="low" loading="lazy" src="<?php echo site_url('static/assets/images/majoo.png');?>" draggable="false" style="height: 2rem; width: 5rem;" alt="profile-image" />
                             </li>
                             <li><small id="clock"></small></li>
                         </ul>
@@ -418,10 +417,10 @@
                 return currentDay + ", " + currentDate + " " + currentMonth + " " + currentYear + " &sdot; " + (d = (d < 10 ? "0" : "") + d) + " : " + (e = (e < 10 ? "0" : "") + e) + " : " + (f = (f < 10 ? "0" : "") + f);
             });
     </script>
-    <script importance="low" src="static/bower_components/popper.js/js/popper.min.js"></script>
-    <script importance="low" src="static/bower_components/bootstrap/js/bootstrap.min.js"></script>
+    <script importance="low" src="static/assets/popper.js/js/popper.min.js"></script>
+    <script importance="low" src="static/assets/bootstrap/js/bootstrap.min.js"></script>
     <script importance="low" src="static/assets/pages/waves/js/waves.min.js"></script>
-    <script importance="low" src="static/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
+    <script importance="low" src="static/assets/jquery-slimscroll/js/jquery.slimscroll.js"></script>
     <script importance="low" src="static/assets/pages/data-table/js/data-table-custom.js"></script>
     <script importance="low" src="static/assets/js/pcoded.min.js"></script>
     <script importance="low" src="static/assets/js/vertical/vertical-layout.min.js"></script>

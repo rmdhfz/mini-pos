@@ -73,6 +73,19 @@ class Backend extends CI_Controller {
 	}
 	# list
 
+	# data
+	public function dataCategory()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$this->load->database();
+		$data = $this->db->query("SELECT id, name FROM category WHERE is_deleted IS NULL");
+		json(response(true, 200, 'success', $data->result()));
+	}
+	# data
+
 	public function index() 
 	{
 		$this->load([
@@ -104,7 +117,7 @@ class Backend extends CI_Controller {
 		}
 		$name  = post('name');
 		$email = post('email');
-		if (empty($name) || empty($email)) {
+		if (!($name) || !($email)) {
             json(response(false, 400, 'bad request'));
 		}
 		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -112,7 +125,7 @@ class Backend extends CI_Controller {
         }
         $username = post('username');
         $password = post('password');
-        if (empty($username) || empty($password)) {
+        if (!($username) || !($password)) {
             json(response(false, 400, 'bad request'));
 		}
 		$status = (int) post('status');
@@ -149,7 +162,7 @@ class Backend extends CI_Controller {
 		if ($get->num_rows() == 0) {
 			json(response(false, 404, 'data not found'));
 		}
-		json(response(true, 201, 'success', $get->row()));
+		json(response(true, 200, 'success', $get->row()));
 	}
 	public function userUpdate()
 	{
@@ -163,7 +176,7 @@ class Backend extends CI_Controller {
 		}
 		$name  = post('name');
 		$email = post('email');
-		if (empty($name) || empty($email)) {
+		if (!($name) || !($email)) {
             json(response(false, 400, 'bad request'));
 		}
 		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -171,7 +184,7 @@ class Backend extends CI_Controller {
         }
         $username = post('username');
         $password = post('password');
-        if (empty($username) || empty($password)) {
+        if (!($username) || !($password)) {
             json(response(false, 400, 'bad request'));
 		}
 		$status = (int) post('status');
@@ -235,7 +248,7 @@ class Backend extends CI_Controller {
 			return;
 		}
 		$name  = post('name');
-		if (empty($name)) {
+		if (!($name)) {
             json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
@@ -267,7 +280,7 @@ class Backend extends CI_Controller {
 		if ($get->num_rows() == 0) {
 			json(response(false, 404, 'data not found'));
 		}
-		json(response(true, 201, 'success', $get->row()));
+		json(response(true, 200, 'success', $get->row()));
 	}
 	public function supplierUpdate()
 	{
@@ -280,7 +293,7 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$name  = post('name');
-		if (empty($name)) {
+		if (!($name)) {
             json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
@@ -339,7 +352,7 @@ class Backend extends CI_Controller {
 			return;
 		}
 		$name  = post('name');
-		if (empty($name)) {
+		if (!($name)) {
             json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
@@ -371,7 +384,7 @@ class Backend extends CI_Controller {
 		if ($get->num_rows() == 0) {
 			json(response(false, 404, 'data not found'));
 		}
-		json(response(true, 201, 'success', $get->row()));
+		json(response(true, 200, 'success', $get->row()));
 	}
 	public function categoryUpdate()
 	{
@@ -384,7 +397,7 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$name  = post('name');
-		if (empty($name)) {
+		if (!($name)) {
             json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
@@ -445,8 +458,9 @@ class Backend extends CI_Controller {
 		$category_id = post('category_id');
 		$name  = post('name');
 		$price = post('price');
-		$description = post('description');
-		if (empty($name) || empty($category_id) || empty($price) || empty($description)) {
+		$status = post('status');
+		$description = $this->input->post('description'); # ignore description
+		if (!($name) || !($category_id) || !($price) || !($description)) {
             json(response(false, 400, 'bad request'));
 		}
 
@@ -457,12 +471,12 @@ class Backend extends CI_Controller {
 
 		$this->load->database();
 		# check category
-		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
+		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$category_id])->num_rows();
 		if ($category == 0) {
 			json(response(false, 404, 'category not found'));
 		}
 
-		$check = $this->db->query("SELECT id FROM product WHERE name = ? AND category_id = ? AND is_deleted IS NULL LIMIT 1", [$name, $category_id, null])->num_rows();
+		$check = $this->db->query("SELECT id FROM product WHERE name = ? AND category_id = ? AND is_deleted IS NULL LIMIT 1", [$name, $category_id])->num_rows();
 		if ($check > 0) {
 			json(response(false, 400, 'product already exist'));
 		}
@@ -472,6 +486,7 @@ class Backend extends CI_Controller {
 			'price'			=>	$price,
 			'img'			=>	$upload['file_name'],
 			'description'	=>	$description,
+			'is_publish'	=>	$status,
 			'created_by'	=>	session('user_name'),
 		]);
 		if (!$create) {
@@ -490,17 +505,11 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		# check category
-		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
-		if ($category == 0) {
-			json(response(false, 404, 'category not found'));
-		}
-
-		$get = $this->db->query("SELECT id, name, category_id FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id]);
+		$get = $this->db->query("SELECT id, name, category_id, price, img, is_publish, description FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id]);
 		if ($get->num_rows() == 0) {
 			json(response(false, 404, 'data not found'));
 		}
-		json(response(true, 201, 'success', $get->row()));
+		json(response(true, 200, 'success', $get->row()));
 	}
 	public function productUpdate()
 	{
@@ -515,19 +524,36 @@ class Backend extends CI_Controller {
 		$category_id = post('category_id');
 		$name  = post('name');
 		$price = post('price');
-		$description = post('description');
-		if (empty($name) || empty($category_id) || empty($price) || empty($description)) {
-            json(response(false, 400, 'bad request'));
+		$fileold = post('fileold');
+		$status = post('status');
+		$description = $this->input->post('description'); # ignore description
+		if (!($name) || !($category_id) || !($price) || !($description)) {
+            json(response(false, 400, 'bad requests'));
+		}
+		
+		$file = $fileold;
+
+		# check new image
+		if (is_uploaded_file($_FILES['file']['tmp_name'])) {
+			# delete old file
+			$filename = PATH_PRODUCT.'/'.$fileold;
+			if (!file_exists($filename)) {
+				json(response(false, 404, 'old file not found'));
+			}
+			unlink($filename);
+
+			# upload new file
+			$upload = _uploadFile(PATH_PRODUCT, 'file');
+			if (!$upload) {
+				json(response(false, 400, 'failed upload'));
+			}
+			$file = $upload['file_name'];
 		}
 
-		$upload = _uploadFile(PATH_PRODUCT, 'file');
-		if (!$upload) {
-			json(response(false, 400, 'failed upload'));
-		}
 		$this->load->database();
 		
 		# check category
-		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
+		$category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$category_id])->num_rows();
 		if ($category == 0) {
 			json(response(false, 404, 'category not found'));
 		}
@@ -540,8 +566,9 @@ class Backend extends CI_Controller {
 			'category_id'	=>	$category_id,
 			'name'			=>	$name,
 			'price'			=>	$price,
-			'img'			=>	$upload['file_name'],
+			'img'			=>	$file,
 			'description'	=>	$description,
+			'is_publish'	=>	$status,
 			'created_by'	=>	session('user_name'),
 		]);
 		if (!$update) {
@@ -560,10 +587,16 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
-		if ($check == 0) {
+		$check = $this->db->query("SELECT id, img FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id]);
+		if ($check->num_rows() == 0) {
 			json(response(false, 400, 'product not found'));
 		}
+		# delete old file
+		$filename = PATH_PRODUCT.'/'.$check->row()->img;
+		if (!file_exists($filename)) {
+			json(response(false, 404, 'old file not found'));
+		}
+		unlink($filename);
 		$update = $this->db->where('id', $id)->update('product', [
 			'is_deleted'	=> 1,
 			'deleted_at'	=> date('Y-m-d h:i:s'),
@@ -591,7 +624,7 @@ class Backend extends CI_Controller {
 		}
 		$name  = post('name');
 		$email = post('email');
-		if (empty($name) || empty($email)) {
+		if (!($name) || !($email)) {
             json(response(false, 400, 'bad request'));
 		}
 		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -627,7 +660,7 @@ class Backend extends CI_Controller {
 		if ($get->num_rows() == 0) {
 			json(response(false, 404, 'data not found'));
 		}
-		json(response(true, 201, 'success', $get->row()));
+		json(response(true, 200, 'success', $get->row()));
 	}
 	public function customerUpdate()
 	{
@@ -641,7 +674,7 @@ class Backend extends CI_Controller {
 		}
 		$name  = post('name');
 		$email = post('email');
-		if (empty($name) || empty($email)) {
+		if (!($name) || !($email)) {
             json(response(false, 400, 'bad request'));
 		}
 		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
