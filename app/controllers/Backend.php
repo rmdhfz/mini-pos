@@ -25,6 +25,46 @@ class Backend extends CI_Controller {
 		$this->load->view('backend/index', $params);
 	}
 
+	private function getTotal($table)
+	{
+		if (!$table) {
+			return false;
+		}
+		$this->load->database();
+		$get = $this->db->query("SELECT count(id) as total FROM $table WHERE is_deleted IS NULL");
+		if ($get->num_rows() == 0) {
+			json(response(false, 404, 'data not found'));
+		}
+		return $get->row();
+	}
+
+	# total
+	public function totalUser()
+	{
+		json(response(true, 200, 'success', $this->getTotal('users')));
+	}
+	public function totalSupplier()
+	{
+		json(response(true, 200, 'success', $this->getTotal('suppliers')));
+	}
+	public function totalProduk()
+	{
+		json(response(true, 200, 'success', $this->getTotal('product')));
+	}
+	public function totalPelanggan()
+	{
+		json(response(true, 200, 'success', $this->getTotal('customers')));
+	}
+	public function totalPembelian()
+	{
+		json(response(true, 200, 'success', $this->getTotal('purchase')));
+	}
+	public function totalPenjualan()
+	{
+		json(response(true, 200, 'success', $this->getTotal('sell')));
+	}
+	# total
+
 	# list
 	public function listUser()
 	{

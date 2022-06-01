@@ -122,26 +122,49 @@
   </div>
   <script type="text/javascript">
   	$(document).ready(function() {
-  		async function getTotalAsset()
+  		async function getTotalUser()
   		{
   			await $.post('total/user').done((res, xhr, status) => {
   				$("#total-user").text(res.data.total);
   			})
   		}
-  		async function getTotalEmployee()
+  		async function getTotalSupplier()
   		{
   			await $.post('total/supplier').done((res, xhr, status) => {
   				$("#total-supplier").text(res.data.total);
   			})
   		}
-  		async function getTotalAssigment()
+  		async function getTotalProduct()
   		{
   			await $.post('total/produk').done((res, xhr, status) => {
   				$("#total-produk").text(res.data.total);
   			})
   		}
-  		getTotalAsset();
-  		getTotalEmployee();
-  		getTotalAssigment();
+      async function getTotalPelanggan()
+      {
+        await $.post('total/pelanggan').done((res, xhr, status) => {
+          $("#total-pelanggan").text(res.data.total);
+        })
+      }
+      async function getTotalPembelian()
+      {
+        await $.post('total/pembelian').done((res, xhr, status) => {
+          $("#total-pembelian").text(res.data.total);
+        })
+      }
+      async function getTotalPenjualan()
+      {
+        await $.post('total/penjualan').done((res, xhr, status) => {
+          $("#total-penjualan").text(res.data.total);
+        })
+      }
+
+
+  		getTotalUser();
+  		getTotalSupplier();
+  		getTotalProduct();
+      getTotalPelanggan();
+      getTotalPembelian();
+      getTotalPenjualan();
   	});
   </script>
