@@ -297,6 +297,7 @@
                             <li><small id="clock"></small></li>
                         </ul>
                         <ul class="nav-right">
+                            <li class="header-notification" href="#modal-language" data-toggle="modal"><i class="feather icon-globe" aria-hidden="true"></i> Translate </li>
                             <li>
                                 <small style="font-weight: bold; text-transform: uppercase;">
                                     Hai, <?php echo session('user_name');?> - <?php echo salam(); ?>
@@ -319,6 +320,33 @@
                     </div>
                 </div>
             </nav>
+            <div class="modal fade modal-flex" id="modal-language" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title"><i class="fa fa-language" aria-hidden="1"></i> Translate </h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div id="google_translate_element"></div>
+                                <script>
+                                    async function googleTranslateElementInit() {
+                                        await new google.translate.TranslateElement({
+                                            pageLanguage: 'id',
+                                            autoDisplay: 'true',
+                                            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                                        }, 'google_translate_element');
+                                    }
+                                </script>
+                                <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
                     <nav class="pcoded-navbar">

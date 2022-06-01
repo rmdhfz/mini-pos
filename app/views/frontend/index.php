@@ -31,6 +31,7 @@
         <div class="logo">
           <a class="brand-logo" href="<?php echo site_url() ?>">
             <h1><?php echo APP_NAME; ?></h1>
+            <small>Test Full Stack Developer by Majoo Indonesia</small>
           </a>
         </div>
         <div class="workinghny-block-grid">
@@ -60,7 +61,7 @@
     </div>
     <div class="copyright text-center">
       <div class="wrapper">
-        <p class="copy-footer-29">© 2022 <a href="<?php echo site_url() ?>"><?php echo APP_NAME; ?></a>. All rights reserved | Design by <a rel="noreferrer nofollow" href="https://linkedin.com/in/hfzrmd" target="_blank">Hafiz Ramadhan</a></p>
+        <p class="copy-footer-29">© 2022 <a href="<?php echo site_url() ?>"><?php echo APP_NAME; ?></a>. All rights reserved | Created by <a rel="noreferrer nofollow" href="https://linkedin.com/in/hfzrmd" target="_blank">Hafiz Ramadhan</a></p>
       </div>
     </div>
   </section>
@@ -101,7 +102,7 @@
         disabledAllForms(form, 0);
         document.getElementById('body').classList.remove('loading');
         if(http.readyState == 4 && http.status == 200){
-          alert("Success login!");
+          alert("Berhasil login!");
           setInterval(()=> {
             window.location = "<?php echo site_url('dashboard');?>";
           }, 500);
@@ -114,7 +115,7 @@
           location.reload(0);
           autoFocusUsername();
         }else{
-          console.log("error");
+          console.error("error");
         }
       }
     });

@@ -129,7 +129,7 @@ class Frontend extends CI_Controller {
 		$data = $check->row();
 		$verify = password_verify($pwd, $data->password);
 		if (!$verify) {
-			json(response(false, 404, 'username or password is wrong'));
+			json(response(false, 404, 'Periksa kembali username dan password Anda'));
 		}
 		$history = $this->_saveHistoryLogin((int) $data->id, $ip_addr, $this->_getBrowser(), $this->_getOS());
 		if (!$history) {
