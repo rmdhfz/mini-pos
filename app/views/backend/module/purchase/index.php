@@ -208,7 +208,7 @@
         $("#product_id").on('change', function(event) {
             event.preventDefault();
             if ($(this).val()) {
-                price = $("#product_id :selected").data('price').replace(/\D/g,'');
+                price = $("#product_id :selected").data('price');
             }
         });
 

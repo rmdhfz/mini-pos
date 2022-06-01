@@ -25,9 +25,9 @@
                                             <th>Nama</th>
                                             <th>Kategori</th>
                                             <th>Harga</th>
-                                            <th>Deskripsi</th>
+                                            <th>Margin</th>
+                                            <th>Stok</th>
                                             <th>Produk</th>
-                                            <th>Tanggal Dibuat</th>
                                             <th>Dibuat Oleh</th>
                                             <th>Opsi</th>
                                         </tr>
@@ -38,9 +38,9 @@
                                             <th>Nama</th>
                                             <th>Kategori</th>
                                             <th>Harga</th>
-                                            <th>Deskripsi</th>
+                                            <th>Margin</th>
+                                            <th>Stok</th>
                                             <th>Produk</th>
-                                            <th>Tanggal Dibuat</th>
                                             <th>Dibuat Oleh</th>
                                             <th>Opsi</th>
                                         </tr>
@@ -74,7 +74,12 @@
                                 <input type="text"name="name"id="name"class="form-control"required="1"placeholder="nama produk"pattern="[a-zA-Z0-9\s]{4,20}"minlength="4"maxlength="20"data-toggle="tooltip"data-placement="top"title="nama produk"/>
                             </div>
                             <div class="col-sm-5">
-                                <input type="text"name="price"id="price"class="form-control"required="1"placeholder="harga produk"pattern="[a-z.A-Z0-9\s]{4,20}"minlength="4"maxlength="20"data-toggle="tooltip"data-placement="top"title="harga produk"/>
+                                <select id="unit" name="unit" class="form-control" required="1" style="width: 100%;">
+                                    <option value="" disabled="1" selected="1">Pilih Satuan</option>
+                                    <option value="pcs">Pcs</option>
+                                    <option value="unit">Unit</option>
+                                    <option value="lusin">Lusin</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -83,6 +88,15 @@
                                 <select id="category_id" name="category_id" class="form-control" required="1" style="width: 100%;">
                                     <option value="" disabled="1" selected="1">Pilih Kategori</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"> Harga </label>
+                            <div class="col-sm-5">
+                                <input type="text" name="buy_price" id="buy_price" class="form-control" required="1" placeholder="harga beli produk">
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="text" name="sell_price" id="sell_price" class="form-control" required="1" placeholder="harga jual produk">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -98,6 +112,15 @@
                             <label class="col-sm-2 col-form-label"> Deskripsi </label>
                             <div class="col-sm-10">
                                 <textarea id="description" name="description"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"> Barcode </label>
+                            <div class="col-sm-5">
+                                <input type="text" name="barcode" id="barcode" class="form-control" required="1" placeholder="barcode produk">
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="number" name="stock" id="stock" class="form-control" required="1" min="1" max="999" placeholder="stok produk">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -150,12 +173,12 @@
                 rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
                 return prefix == undefined ? rupiah : rupiah ? "Rp. " + rupiah : "";
         }
-        $("#price").on('keyup', function(event) {
+        $("#buy_price, #sell_price").on('keyup', function(event) {
             event.preventDefault();
             $(this).val(formatIDR($(this).val(), "Rp. "));
         });
 
-        $("#category_id, #status").select2();
+        $("#category_id, #unit, #status").select2();
         async function getCategory()
         {
             setupselect("#category_id", "Kategori");
@@ -242,14 +265,18 @@
                           image_product = PATH_PRODUCT + '/' + res.data.img;
                     $("#id").val(res.data.id);
                     $("#name").val(res.data.name);
-                    $("#price").val(res.data.price);
+                    $("#buy_price").val(res.data.buy_price);
+                    $("#sell_price").val(res.data.sell_price);
+                    $("#barcode").val(res.data.barcode);
+                    $("#stock").val(res.data.stock);
                     $("#file").removeAttr('required');
                     $("#fileold").val(res.data.img);
                     $("#preview").attr('src', image_product);
-                    myEditor.setData(res.data.description);
+                    $("#unit").val(res.data.unit).trigger('change');
                     $("#category_id").val(res.data.category_id).trigger('change');
                     $("#status").val(res.data.is_publish).trigger('change');
                     $("#modal-product").modal('show');
+                    myEditor.setData(res.data.description);
                 }
             })
         });

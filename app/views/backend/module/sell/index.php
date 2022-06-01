@@ -189,7 +189,7 @@
                     const data = res.data;
                     $.each(data, function(index, val) {
                         $("#product_id").append(
-                            `<option value='${val.id}' data-price='${val.price}'>${val.name}</option>`
+                            `<option value='${val.id}' data-price='${val.price}'>${val.name} - ${val.sku}</option>`
                         );
                     });
                 }
@@ -208,7 +208,7 @@
         $("#product_id").on('change', function(event) {
             event.preventDefault();
             if ($(this).val()) {
-                price = $("#product_id :selected").data('price').replace(/\D/g,'');
+                price = $("#product_id :selected").data('price');
             }
         });
 

@@ -122,7 +122,7 @@ class Model extends CI_Model {
 	}
 	public function listCategory()
 	{
-		$get = $this->db->query("SELECT id, name, created_at, created_by FROM category WHERE is_deleted IS NULL");
+		$get = $this->db->query("SELECT id, name, code_category, created_at, created_by FROM category WHERE is_deleted IS NULL");
 		if ($get->num_rows() == 0) {
 			json([]);
 		}
@@ -137,6 +137,7 @@ class Model extends CI_Model {
 			$result['data'][$key] = [
 				$no,
 				$value->name,
+				$value->code_category,
 				change_format_date($value->created_at),
 				$value->created_by,
 				$options
@@ -147,11 +148,10 @@ class Model extends CI_Model {
 	public function listProduct()
 	{
 		$get = $this->db->query("SELECT 
-			p.id, 
+			p.id, p.sku,
 			p.name,
-			p.price, 
+			p.buy_price, p.sell_price, p.margin, p.stock,
 			p.img, 
-			p.description, 
 			p.created_at, 
 			p.created_by,
 			c.name as category
@@ -172,15 +172,22 @@ class Model extends CI_Model {
 			if (!$options) {
 				json("failed create options");
 			}
+			$buy_price = rupiah($value->buy_price);
+			$sell_price = rupiah($value->sell_price);
+			$margin = rupiah($value->margin);
+			$harga = "
+				Beli: $buy_price <br>
+				Jual: $sell_price <br>
+			";
 			$result['data'][$key] = [
 				$no,
-				$value->name,
+				$value->name."<br>".$value->sku,
 				$value->category,
-				$value->price,
-				$value->description,
+				$harga,
+				$margin,
+				$value->stock,
 				$img,
-				change_format_date($value->created_at),
-				$value->created_by,
+				$value->created_by."<br>".change_format_date($value->created_at),
 				$options
 			];
 		}

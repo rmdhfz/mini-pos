@@ -199,7 +199,7 @@ class Backend extends CI_Controller {
 		if ($check == 0) {
 			json(response(false, 404, 'category not found'));
 		}
-		$data = $this->db->query("SELECT id, name, price, description, img FROM product WHERE is_deleted IS NULL AND is_publish = 1");
+		$data = $this->db->query("SELECT id, sku, name, sell_price as price, description, img FROM product WHERE is_deleted IS NULL AND is_publish = 1");
 		json(response(true, 200, 'success', $data->result()));
 	}
 	public function dataCustomer()
@@ -480,7 +480,8 @@ class Backend extends CI_Controller {
 			return;
 		}
 		$name  = post('name');
-		if (!($name)) {
+		$code_category  = post('code_category');
+		if (!($name) || !($code_category)) {
             json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
@@ -490,6 +491,7 @@ class Backend extends CI_Controller {
 		}
 		$create = $this->db->insert('category', [
 			'name'			=> $name,
+			'code_category'			=> $code_category,
 			'created_by'	=> session('user_name'),
 		]);
 		if (!$create) {
@@ -508,7 +510,7 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$get = $this->db->query("SELECT id, name FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id]);
+		$get = $this->db->query("SELECT id, name, code_category FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id]);
 		if ($get->num_rows() == 0) {
 			json(response(false, 404, 'data not found'));
 		}
@@ -525,7 +527,8 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$name  = post('name');
-		if (!($name)) {
+		$code_category  = post('code_category');
+		if (!($name) || !($code_category)) {
             json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
@@ -535,6 +538,7 @@ class Backend extends CI_Controller {
 		}
 		$update = $this->db->where('id', $id)->update('category', [
 			'name'			=> $name,
+			'code_category'	=> $code_category,
 			'updated_at'	=> date('Y-m-d h:i:s'),
 			'updated_by'	=> session('user_name'),
 		]);
@@ -577,6 +581,48 @@ class Backend extends CI_Controller {
 			'file' => 'module/product/index'
 		]);
 	}
+	# todo
+	public function createSKU($category_id, $is_return = false)
+	{
+		$this->load->database();
+		# check category
+		$check = $this->db->query("SELECT id, code_category FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$category_id]);
+		
+		if ($check->num_rows() == 0) {
+			json(response(false, 404, 'category not found'));
+		}
+
+		$code_category = $check->row()->code_category;
+
+		$get = $this->db->query("SELECT RIGHT(sku, 3) as sequence FROM product WHERE is_deleted IS NULL LIMIT 1");
+
+		$sequence;
+		if ($get->num_rows() == 0) {
+			$sequence = "001";
+		}else{
+			$data = $get->row();
+			$sequence = intval($data->sequence) + 1;
+		}
+		// SPT.22.06.01.001
+
+		// SPT = Kode Kategori
+		// 22 = Tahun
+		// 06 = Bulan
+		// 01 = Hari
+		// 001 = Urutan
+
+		// SPT220601001
+		$format = $code_category.date('y').date('m').date('d').sprintf("%03s", $sequence);
+		if ($is_return) {
+			return $format;
+		}else{
+			json(response(true, 200, 'success', ['number' => $format]));
+		}
+	}
+	private function onlyNumeric($data)
+	{
+		return preg_replace('/\D/', '', $data);
+	}
 	public function productAdd()
 	{
 		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
@@ -584,11 +630,18 @@ class Backend extends CI_Controller {
 			return;
 		}
 		$category_id = post('category_id');
+		$sku = $this->createSKU($category_id, true);
 		$name  = post('name');
-		$price = post('price');
+		$barcode  = post('barcode');
+		$buy_price = $this->onlyNumeric(post('buy_price'));
+		$sell_price = $this->onlyNumeric(post('sell_price'));
+		$margin = $sell_price - $buy_price;
+		$barcode = post('barcode');
+		$stock = post('stock');
+		$unit = post('unit');
 		$status = post('status');
 		$description = $this->input->post('description'); # ignore description
-		if (!($name) || !($category_id) || !($price) || !($description)) {
+		if (!($name) || !($category_id) || !($buy_price) || !($sell_price) || !($description)) {
             json(response(false, 400, 'bad request'));
 		}
 
@@ -610,8 +663,15 @@ class Backend extends CI_Controller {
 		}
 		$create = $this->db->insert('product', [
 			'category_id'	=>	$category_id,
+			'sku'			=>	$sku,
+			'barcode'		=>	$barcode,
 			'name'			=>	$name,
-			'price'			=>	$price,
+			'buy_price'		=>	$buy_price,
+			'sell_price'	=>	$sell_price,
+			'margin'		=>	$margin,
+			'barcode'		=>	$barcode,
+			'stock'			=>	$stock,
+			'unit'			=>	$unit,
 			'img'			=>	$upload['file_name'],
 			'description'	=>	$description,
 			'is_publish'	=>	$status,
@@ -633,7 +693,7 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$get = $this->db->query("SELECT id, name, category_id, price, img, is_publish, description FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id]);
+		$get = $this->db->query("SELECT id, name, category_id, buy_price, sell_price, stock, barcode, unit, img, is_publish, description FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id]);
 		if ($get->num_rows() == 0) {
 			json(response(false, 404, 'data not found'));
 		}
@@ -651,12 +711,18 @@ class Backend extends CI_Controller {
 		}
 		$category_id = post('category_id');
 		$name  = post('name');
-		$price = post('price');
-		$fileold = post('fileold');
+		$barcode  = post('barcode');
+		$buy_price = $this->onlyNumeric(post('buy_price'));
+		$sell_price = $this->onlyNumeric(post('sell_price'));
+		$margin = $sell_price - $buy_price;
+		$barcode = post('barcode');
+		$stock = post('stock');
+		$unit = post('unit');
 		$status = post('status');
+		$fileold = post('fileold');
 		$description = $this->input->post('description'); # ignore description
-		if (!($name) || !($category_id) || !($price) || !($description)) {
-            json(response(false, 400, 'bad requests'));
+		if (!($name) || !($category_id) || !($buy_price) || !($sell_price) || !($description)) {
+            json(response(false, 400, 'bad request'));
 		}
 		
 		$file = $fileold;
@@ -692,8 +758,14 @@ class Backend extends CI_Controller {
 		}
 		$update = $this->db->where('id', $id)->update('product', [
 			'category_id'	=>	$category_id,
+			'barcode'		=>	$barcode,
 			'name'			=>	$name,
-			'price'			=>	$price,
+			'buy_price'		=>	$buy_price,
+			'sell_price'	=>	$sell_price,
+			'margin'		=>	$margin,
+			'barcode'		=>	$barcode,
+			'stock'			=>	$stock,
+			'unit'			=>	$unit,
 			'img'			=>	$file,
 			'description'	=>	$description,
 			'is_publish'	=>	$status,
@@ -898,7 +970,8 @@ class Backend extends CI_Controller {
 		if ($check_product == 0) {
 			json(response(false, 404, 'product not found'));
 		}
-
+		$this->db->trans_start();
+		$this->db->trans_strict(false);
 		$create = $this->db->insert('purchase', [
 			'supplier_id'	=> $supplier_id,
 			'category_id'	=> $category_id,
@@ -911,6 +984,15 @@ class Backend extends CI_Controller {
 		if (!$create) {
 			json(response(false, 500, 'failed create purchase'));
 		}
+		$updateStock = $this->updateStock($product_id, $qty, "+");
+		if (!$updateStock) {
+			json(response(false, 500, 'failed update stock'));
+		}
+		$this->db->trans_complete();
+		if (!$this->db->trans_status()) {
+			$this->db->trans_rollback();
+		}
+		$this->db->trans_commit();
 		json(response(true, 201, 'success create purchase'));
 	}
 	public function purchaseId()
@@ -929,7 +1011,7 @@ class Backend extends CI_Controller {
 				p.id, p.supplier_id, 
 				p.category_id, p.product_id, 
 				p.qty, p.total, p.note,
-				pd.price
+				pd.sell_price as price
 				
 				FROM purchase p
 				INNER JOIN product pd ON p.product_id = pd.id
@@ -987,7 +1069,8 @@ class Backend extends CI_Controller {
 		if ($check == 0) {
 			json(response(false, 404, 'data not found'));
 		}
-
+		$this->db->trans_start();
+		$this->db->trans_strict(false);
 		$update = $this->db->where('id', $id)->update('purchase', [
 			'supplier_id'	=> $supplier_id,
 			'category_id'	=> $category_id,
@@ -1000,6 +1083,15 @@ class Backend extends CI_Controller {
 		if (!$update) {
 			json(response(false, 500, 'failed update purchase'));
 		}
+		$updateStock = $this->updateStock($product_id, $qty, "+");
+		if (!$updateStock) {
+			json(response(false, 500, 'failed update stock'));
+		}
+		$this->db->trans_complete();
+		if (!$this->db->trans_status()) {
+			$this->db->trans_rollback();
+		}
+		$this->db->trans_commit();
 		json(response(true, 201, 'success update purchase'));
 	}
 	public function purchaseDelete()
@@ -1013,21 +1105,59 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM purchase WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
-		if ($check == 0) {
+		$check = $this->db->query("SELECT id, product_id, qty FROM purchase WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id]);
+		if ($check->num_rows() == 0) {
 			json(response(false, 400, 'purchase not found'));
 		}
-		$update = $this->db->where('id', $id)->update('purchase', [
+		$this->db->trans_start();
+		$this->db->trans_strict(false);
+		$delete = $this->db->where('id', $id)->update('purchase', [
 			'is_deleted'	=> 1,
 			'deleted_at'	=> date('Y-m-d h:i:s'),
 			'deleted_by'	=> session('user_name'),
 		]);
-		if (!$update) {
+		if (!$delete) {
 			json(response(false, 500, 'failed'));
 		}
+		$updateStock = $this->updateStock($check->row()->product_id, $check->row()->qty, "-");
+		if (!$updateStock) {
+			json(response(false, 500, 'failed update stock'));
+		}
+		$this->db->trans_complete();
+		if (!$this->db->trans_status()) {
+			$this->db->trans_rollback();
+		}
+		$this->db->trans_commit();
 		json(response(true, 201, 'success, deleted'));
 	}
 	# purchase
+
+	# stock
+	private function updateStock($product_id, $qty, $operation = "-")
+	{
+		if (!$product_id || !$qty) {
+			return false;
+		}
+		$this->load->database();
+		$check = $this->db->query("SELECT id, stock FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$product_id]);
+		if ($check->num_rows() == 0) {
+			return false;
+		}
+		$current_stok;
+		if ($operation === "-") {
+			$current_stok = $check->row()->stock - $qty;
+		}else if ($operation === "+") {
+			$current_stok = $check->row()->stock + $qty;
+		}
+		$update = $this->db->where('id', $product_id)->update('product', [
+			'stock' => $current_stok
+		]);
+		if (!$update) {
+			json(response(false, 500, 'failed update stock'));
+		}
+		return true;
+	}
+	# stock
 
 	# sell
 	public function sell()
@@ -1072,12 +1202,13 @@ class Backend extends CI_Controller {
 		if ($check_product == 0) {
 			json(response(false, 404, 'product not found'));
 		}
-
+		$this->db->trans_start();
+		$this->db->trans_strict(false);
 		$create = $this->db->insert('sell', [
 			'customer_id'	=> $customer_id,
 			'category_id'	=> $category_id,
 			'product_id'	=> $product_id,
-			'note'	=> $note,
+			'note'			=> $note,
 			'qty'			=> $qty,
 			'total'			=> $total,
 			'created_by'	=> session('user_name'),
@@ -1085,6 +1216,15 @@ class Backend extends CI_Controller {
 		if (!$create) {
 			json(response(false, 500, 'failed create sell'));
 		}
+		$updateStock = $this->updateStock($product_id, $qty, "-");
+		if (!$updateStock) {
+			json(response(false, 500, 'failed update stock'));
+		}
+		$this->db->trans_complete();
+		if (!$this->db->trans_status()) {
+			$this->db->trans_rollback();
+		}
+		$this->db->trans_commit();
 		json(response(true, 201, 'success create sell'));
 	}
 	public function sellId()
@@ -1103,7 +1243,7 @@ class Backend extends CI_Controller {
 				p.id, p.customer_id, 
 				p.category_id, p.product_id, 
 				p.qty, p.total, p.note,
-				pd.price
+				pd.sell_price as price
 				
 				FROM sell p
 				INNER JOIN product pd ON p.product_id = pd.id
@@ -1161,7 +1301,8 @@ class Backend extends CI_Controller {
 		if ($check == 0) {
 			json(response(false, 404, 'data not found'));
 		}
-
+		$this->db->trans_start();
+		$this->db->trans_strict(false);
 		$update = $this->db->where('id', $id)->update('sell', [
 			'customer_id'	=> $customer_id,
 			'category_id'	=> $category_id,
@@ -1174,6 +1315,15 @@ class Backend extends CI_Controller {
 		if (!$update) {
 			json(response(false, 500, 'failed update sell'));
 		}
+		$updateStock = $this->updateStock($product_id, $qty, "-");
+		if (!$updateStock) {
+			json(response(false, 500, 'failed update stock'));
+		}
+		$this->db->trans_complete();
+		if (!$this->db->trans_status()) {
+			$this->db->trans_rollback();
+		}
+		$this->db->trans_commit();
 		json(response(true, 201, 'success update sell'));
 	}
 	public function sellDelete()
@@ -1187,18 +1337,29 @@ class Backend extends CI_Controller {
 			json(response(false, 400, 'bad request'));
 		}
 		$this->load->database();
-		$check = $this->db->query("SELECT id FROM sell WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
+		$check = $this->db->query("SELECT id, product_id, qty FROM sell WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
 		if ($check == 0) {
 			json(response(false, 400, 'sell not found'));
 		}
-		$update = $this->db->where('id', $id)->update('sell', [
+		$this->db->trans_start();
+		$this->db->trans_strict(false);
+		$delete = $this->db->where('id', $id)->update('sell', [
 			'is_deleted'	=> 1,
 			'deleted_at'	=> date('Y-m-d h:i:s'),
 			'deleted_by'	=> session('user_name'),
 		]);
-		if (!$update) {
+		if (!$delete) {
 			json(response(false, 500, 'failed'));
 		}
+		$updateStock = $this->updateStock($check->row()->product_id, $check->row()->qty, "+");
+		if (!$updateStock) {
+			json(response(false, 500, 'failed update stock'));
+		}
+		$this->db->trans_complete();
+		if (!$this->db->trans_status()) {
+			$this->db->trans_rollback();
+		}
+		$this->db->trans_commit();
 		json(response(true, 201, 'success, deleted'));
 	}
 	# sell

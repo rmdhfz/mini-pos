@@ -16,6 +16,7 @@
                                         <tr>
                                             <th>No.</th>
                                             <th>Nama</th>
+                                            <th>Kode</th>
                                             <th>Tanggal Dibuat</th>
                                             <th>Dibuat Oleh</th>
                                             <th>Opsi</th>
@@ -25,6 +26,7 @@
                                         <tr>
                                             <th>No.</th>
                                             <th>Nama</th>
+                                            <th>Kode</th>
                                             <th>Tanggal Dibuat</th>
                                             <th>Dibuat Oleh</th>
                                             <th>Opsi</th>
@@ -54,8 +56,11 @@
                         <input type="hidden" name="id" id="id" />
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label"> Nama </label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-5">
                                 <input type="text"name="name"id="name"class="form-control"required="1"placeholder="nama category"pattern="[a-zA-Z0-9\s]{4,35}"minlength="4"maxlength="35"data-toggle="tooltip"data-placement="top"title="nama category"/>
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="text"name="code_category"id="code_category"class="form-control"required="1"placeholder="kode category"pattern="[a-zA-Z0-9\s]{3,5}"minlength="3"maxlength="5"data-toggle="tooltip"data-placement="top"title="kode category"/>
                             </div>
                         </div>
                         <button type="submit" name="submit" id="_submit" value="1" hidden="1"></button>
@@ -108,6 +113,7 @@
                 if (res.status) {
                     $("#id").val(res.data.id);
                     $("#name").val(res.data.name);
+                    $("#code_category").val(res.data.code_category);
                     $("#modal-category").modal('show');
                 }
             })
