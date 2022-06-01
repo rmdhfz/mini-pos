@@ -18,6 +18,3 @@ application/logs/*
 
 # menghindari file test yang diupload supaya tidak naik ke github :)
 static/upload/*
-
-# jangan upload log ke github
-app/logs/*
