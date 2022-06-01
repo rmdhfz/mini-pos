@@ -945,7 +945,7 @@ class Backend extends CI_Controller {
 		$product_id = post('product_id');
 		$note = $this->input->post('note');
 		$qty = post('qty');
-		$total = post('total');
+		$total = $this->onlyNumeric(post('total'));
 		if (
 			!($supplier_id) ||
 			!($category_id) || 
@@ -1036,7 +1036,7 @@ class Backend extends CI_Controller {
 		$product_id = post('product_id');
 		$note = $this->input->post('note');
 		$qty = post('qty');
-		$total = post('total');
+		$total = $this->onlyNumeric(post('total'));
 		if (
 			!($id) ||
 			!($supplier_id) ||

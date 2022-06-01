@@ -106,7 +106,7 @@
             event.preventDefault();
             let id = $("#id").val(), url;
             id === "" ? url = "customer/add" : url = "customer/update";
-            if (confirm("Is the input data correct ?")) {
+            if (confirm("Apakah Anda yakin data yang diinput sudah benar ?")) {
                 $.post(url, $(this).serialize()).done((res, xhr, status) => {
                     ReloadTable(table);
                     ClearFormData($(this));
@@ -136,7 +136,7 @@
             if (!id) {
                 alert("id is null");
             }
-            if (confirm("Are you sure want to delete this data ?")) {
+            if (confirm("Apakah Anda yakin data ini ingin dihapus ?")) {
                 $.post('customer/delete', {id: id}).done((res,xhr,status) => {
                     if (res.status) {
                         ReloadTable(table);

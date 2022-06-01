@@ -248,7 +248,7 @@
             event.preventDefault();
             let id = $("#id").val(), url;
             id === "" ? url = "product/add" : url = "product/update";
-            if (confirm("Is the input data correct ?")) {
+            if (confirm("Apakah Anda yakin data yang diinput sudah benar ?")) {
                 uploadProduct(url, new FormData($(this)[0]));
                 ClearFormData($(this));
             }
@@ -286,7 +286,7 @@
             if (!id) {
                 alert("id is null");
             }
-            if (confirm("Are you sure want to delete this data ?")) {
+            if (confirm("Apakah Anda yakin data ini ingin dihapus ?")) {
                 $.post('product/delete', {id: id}).done((res,xhr,status) => {
                     if (res.status) {
                         ReloadTable(table);
