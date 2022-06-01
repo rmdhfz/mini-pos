@@ -1202,4 +1202,25 @@ class Backend extends CI_Controller {
 		json(response(true, 201, 'success, deleted'));
 	}
 	# sell
+
+	private function validateDate($date, $format = 'Y-m-d H:i:s') {
+		$d = DateTime::createFromFormat($format, $date);
+		return $d && $d->format($format) == $date;
+	}
+
+	# report
+	public function laporanPembelian()
+	{
+		$this->load([
+			'file' => 'module/report/purchase/index'
+		]);
+	}
+	public function reportPembelian()
+	{	
+		$from = post('from').POSTFIX_START_REPORT;
+		$to = post('to').POSTFIX_END_REPORT;
+		$this->load->model('model');
+		$this->model->reportPembelian($from, $to);
+	}
+	# report
 }

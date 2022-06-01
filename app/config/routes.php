@@ -101,4 +101,9 @@ $route = [
 	'sell/update'				=> 'Backend/sellUpdate',
 	'sell/delete'				=> 'Backend/sellDelete',
 	# sale
+
+	# report
+	'laporan/pembelian'			=> 'Backend/laporanPembelian',
+	'report/pembelian'			=> 'Backend/reportPembelian',
+	# report
 ];

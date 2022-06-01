@@ -59,6 +59,34 @@
             </li>
         </ul>
     </li>
+    <li class="pcoded-hasmenu">
+        <a href="javascript:void(0)" class="waves-effect waves-dark">
+            <span class="pcoded-micon"><i class="fas fa-chart-bar" aria-hidden="true"></i></span>
+            <span class="pcoded-mtext">Data Laporan</span>
+        </a>
+        <ul class="pcoded-submenu">
+            <li>
+                <a href="<?php echo site_url('laporan/pembelian') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Klik untuk melihat laporan pembelian">
+                    <span class="pcoded-mtext">Pembelian</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo site_url('laporan/pembelian/perproduk') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Klik untuk melihat laporan pembelian perproduk">
+                    <span class="pcoded-mtext">Pembelian per Produk</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo site_url('laporan/penjualan') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Klik untuk melihat laporan penjualan">
+                    <span class="pcoded-mtext">Penjualan</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo site_url('laporan/penjualan/perproduk') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Klik untuk melihat laporan penjualan">
+                    <span class="pcoded-mtext">Penjualan per Produk</span>
+                </a>
+            </li>
+        </ul>
+    </li>
     <li>
         <a href="<?php echo site_url('monitoring') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Klik untuk melihat pengguna login">
             <span class="pcoded-micon">

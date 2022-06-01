@@ -40,7 +40,7 @@
         <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700" rel="stylesheet" media="screen, projection" />
 
         <link rel="preload" type="text/css" href="static/assets/css/bootstrap.min.css" as="style" onload="this.rel='stylesheet'"/>
-        <link rel="stylesheet" type="text/css" href="static/assets/pages/waves/css/waves.min.css" media="screen, projection" />
+        <link rel="stylesheet" type="text/css" href="static/assets/css/waves.min.css" media="screen, projection" />
         <link rel="stylesheet" type="text/css" href="static/assets/icon/feather/css/feather.min.css" media="screen, projection" />
         <link rel="stylesheet" type="text/css" href="static/assets/css/font-awesome-n.min.css" media="screen, projection" />
         <link rel="stylesheet" type="text/css" href="static/assets/css/style.min.css" media="screen, projection" />
@@ -48,11 +48,14 @@
         <link rel="stylesheet" type="text/css" href="static/assets/css/notif.min.css" media="screen, projection" />
         <link rel="stylesheet" type="text/css" href="static/assets/css/loading.css" media="screen, projection" />
         <link rel="stylesheet" type="text/css" href="static/assets/css/select2.min.css" media="screen, projection" />
-
         <link rel="stylesheet" type="text/css" href="static/assets/css/jquery-ui.min.css" media="screen, projection" />
-        <link rel="stylesheet" type="text/css" href="static/assets/datatables.net-bs4/css/dataTables.bootstrap4.min.css" media="screen, projection" />
-        <link rel="stylesheet" type="text/css" href="static/assets/pages/data-table/css/buttons.dataTables.min.css" media="screen, projection" />
-        <link rel="stylesheet" type="text/css" href="static/assets/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" media="screen, projection" />
+
+        <!-- datatable -->
+        <link rel="stylesheet" type="text/css" href="static/assets/css/dataTables.bootstrap4.min.css" media="screen, projection" />
+        <link rel="stylesheet" type="text/css" href="static/assets/css/buttons.dataTables.min.css" media="screen, projection" />
+        <link rel="stylesheet" type="text/css" href="static/assets/css/responsive.bootstrap4.min.css" media="screen, projection" />
+        <!-- datatable -->
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -60,12 +63,20 @@
             <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+        
+        <!-- jquery -->
         <script importance="low" src="static/jquery.min.js"></script>
         <script importance="low" src="static/assets/js/jquery-ui.min.js"></script>
-        <script importance="low" src="static/assets/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script importance="low" src="static/assets/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-        <script importance="low" src="static/assets/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-        <script importance="low" src="static/assets/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+        <!-- jquery -->
+        
+        <!-- datatable -->
+        <script importance="low" src="static/assets/js/jquery.dataTables.min.js"></script>
+        <script importance="low" src="static/assets/js/dataTables.bootstrap4.min.js"></script>
+        <script importance="low" src="static/assets/js/dataTables.responsive.min.js"></script>
+        <script importance="low" src="static/assets/js/responsive.bootstrap4.min.js"></script>
+        <!-- datatable -->
+
+
         <noscript> "<meta http-equiv="refresh" content="0 URL=<?php echo site_url('noscript'); ?>" />"</noscript>
         <style type="text/css" media="screen, projection">
             .loader {
@@ -434,10 +445,9 @@
             });
     </script>
     <script importance="low" src="static/assets/popper.js/js/popper.min.js"></script>
-    <script importance="low" src="static/assets/bootstrap/js/bootstrap.min.js"></script>
-    <script importance="low" src="static/assets/pages/waves/js/waves.min.js"></script>
-    <script importance="low" src="static/assets/jquery-slimscroll/js/jquery.slimscroll.js"></script>
-    <script importance="low" src="static/assets/pages/data-table/js/data-table-custom.js"></script>
+    <script importance="low" src="static/assets/js/bootstrap.min.js"></script>
+    <script importance="low" src="static/assets/js/waves.min.js"></script>
+    <script importance="low" src="static/assets/js/jquery.slimscroll.js"></script>
     <script importance="low" src="static/assets/js/pcoded.min.js"></script>
     <script importance="low" src="static/assets/js/vertical/vertical-layout.min.js"></script>
     <script importance="low" src="static/assets/js/script.min.js"></script>

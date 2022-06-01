@@ -33,3 +33,6 @@ define("PATH_PRODUCT", "static/upload/product/");
 define("INSTAGRAM", "https://instagram.com/hfzrmd");
 define("LINKEDIN", "https://linkedin.com/in/hfzrmd");
 define("GITHUB", "https://github.com/rmdhfz");
+
+define('POSTFIX_START_REPORT', ' 00:00:01');
+define('POSTFIX_END_REPORT', ' 23:59:59');
