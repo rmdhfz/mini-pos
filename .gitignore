@@ -17,4 +17,4 @@ application/logs/*
 /vendor/
 
 # menghindari file test yang diupload supaya tidak naik ke github :)
-upload/*
+static/upload/*
