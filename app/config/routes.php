@@ -16,12 +16,14 @@ $route = [
 	'list/product'			=>	'Backend/listProduct',
 	'list/customer'			=>	'Backend/listCustomer',
 	'list/purchase'			=>	'Backend/listPurchase',
+	'list/sell'				=>	'Backend/listSell',
 	# list
 
 	# data
 	'data/category'			=>	'Backend/dataCategory',
 	'data/supplier'			=>	'Backend/dataSupplier',
 	'data/product'			=>	'Backend/dataProduct',
+	'data/customer'			=>	'Backend/dataCustomer',
 	# data
 
 	# user
@@ -69,6 +71,14 @@ $route = [
 	'purchase/add'				=> 'Backend/purchaseAdd',
 	'purchase/id'				=> 'Backend/purchaseId',
 	'purchase/update'			=> 'Backend/purchaseUpdate',
-	'purchase/delete'			=> 'Backend/purchaseDelete'
+	'purchase/delete'			=> 'Backend/purchaseDelete',
 	# purchase
+
+	# sale
+	'penjualan'					=> 'Backend/sell',
+	'sell/add'					=> 'Backend/sellAdd',
+	'sell/id'					=> 'Backend/sellId',
+	'sell/update'				=> 'Backend/sellUpdate',
+	'sell/delete'				=> 'Backend/sellDelete',
+	# sale
 ];

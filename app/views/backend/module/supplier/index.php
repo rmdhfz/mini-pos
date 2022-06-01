@@ -122,7 +122,7 @@
                 $.post('supplier/delete', {id: id}).done((res,xhr,status) => {
                     if (res.status) {
                         ReloadTable(table);
-                        alert("Success Deleted Data");
+                        notif("info", "info", res.msg);
                     }
                 })
             }

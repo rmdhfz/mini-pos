@@ -13,16 +13,16 @@
                 <div class="col-xl-12 col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Data Pembelian</h5>
-                            <button type="button" class="btn btn-sm btn-flat btn-success waves-effect" data-toggle="modal" data-target="#modal-purchase" data-backdrop="static" data-keyboard="false" onclick="ClearFormData($('#form-purchase'));" style="border-radius: 21px;"><i class="fas fa-plus" aria-hidden="true"></i> Tambah Pembelian </button>
+                            <h5>Data Penjualan</h5>
+                            <button type="button" class="btn btn-sm btn-flat btn-success waves-effect" data-toggle="modal" data-target="#modal-sell" data-backdrop="static" data-keyboard="false" onclick="ClearFormData($('#form-sell'));" style="border-radius: 21px;"><i class="fas fa-plus" aria-hidden="true"></i> Tambah Penjualan </button>
                         </div>
                         <div class="card-block">
                             <div class="dt-responsive table-responsive">
-                                <table id="table-purchase" class="table nowrap" style="width: 100%;">
+                                <table id="table-sell" class="table nowrap" style="width: 100%;">
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Supplier</th>
+                                            <th>Pelanggan</th>
                                             <th>Kategori</th>
                                             <th>Produk</th>
                                             <th>Jumlah</th>
@@ -36,7 +36,7 @@
                                     <tfoot>
                                         <tr>
                                             <th>No.</th>
-                                            <th>Supplier</th>
+                                            <th>Pelanggan</th>
                                             <th>Kategori</th>
                                             <th>Produk</th>
                                             <th>Jumlah</th>
@@ -56,24 +56,24 @@
         </div>
     </div>
 </div>
-<div class="modal fade modal-flex" id="modal-purchase"  purchase="dialog">
-    <div class="modal-dialog modal-lg" purchase="document">
+<div class="modal fade modal-flex" id="modal-sell"  sell="dialog">
+    <div class="modal-dialog modal-lg" sell="document">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #2ed8b6;">
-                <h4 class="modal-title" style="color: white;">Form Pembelian</h4>
+                <h4 class="modal-title" style="color: white;">Form Penjualan</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body model-container">
                 <div class="container">
-                    <form id="form-purchase" name="form-purchase" accept-charset="utf-8" autocomplete="off" method="post">
+                    <form id="form-sell" name="form-sell" accept-charset="utf-8" autocomplete="off" method="post">
                         <input type="hidden" name="id" id="id" />
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label"> Supplier </label>
+                            <label class="col-sm-2 col-form-label"> Pelanggan </label>
                             <div class="col-sm-10">
-                                <select id="supplier_id" name="supplier_id" class="form-control" required="1" style="width: 100%;">
-                                    <option value="" disabled="1" selected="1">Pilih Supplier</option>
+                                <select id="customer_id" name="customer_id" class="form-control" required="1" style="width: 100%;">
+                                    <option value="" disabled="1" selected="1">Pilih Pelanggan</option>
                                 </select>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label"> Deskripsi </label>
+                            <label class="col-sm-2 col-form-label"> Keterangan </label>
                             <div class="col-sm-10">
                                 <textarea id="note" name="note"></textarea>
                             </div>
@@ -120,7 +120,7 @@
         let price, myEditor;
         function initEditor(){
             return ClassicEditor.create(document.querySelector('#note'), {
-                placeholder: "Keterangan penjualan (opsional)"
+                placeholder: "Keterangan pembelian (opsional)"
             })
             .then(editor => {
                 window.editor = editor;
@@ -131,7 +131,7 @@
             });
         }
         initEditor();
-        $("#supplier_id, #category_id, #product_id").select2();
+        $("#customer_id, #category_id, #product_id").select2();
         function formatIDR(angka, prefix) {
             var number_string = angka.replace(/[^,\d]/g, "").toString(),
                 split = number_string.split(","),
@@ -145,14 +145,14 @@
                 rupiah = split[1] != undefined ? rupiah + "," + split[1] : rupiah;
                 return prefix == undefined ? rupiah : rupiah ? "Rp. " + rupiah : "";
         }
-        async function getSupplier()
+        async function getCustomer()
         {
-            setupselect("#supplier_id", "Supplier");
-            await $.post("<?php echo site_url('data/supplier'); ?>").done((res,xhr,status) => {
+            setupselect("#customer_id", "Pelanggan");
+            await $.post("<?php echo site_url('data/customer'); ?>").done((res,xhr,status) => {
                 if (res.status) {
                     const data = res.data;
                     $.each(data, function(index, val) {
-                        $("#supplier_id").append(
+                        $("#customer_id").append(
                             `<option value='${val.id}'>${val.name}</option>`
                         );
                     });
@@ -161,7 +161,7 @@
                 console.log(err);
             })
         }
-        getSupplier();
+        getCustomer();
 
         async function getCategory()
         {
@@ -224,21 +224,21 @@
         });
 
         let table;
-        table = $("#table-purchase").DataTable({
+        table = $("#table-sell").DataTable({
             serverside: true,
             ajax: {
                 type: "post",
-                url: "<?php echo site_url('list/purchase'); ?>",
+                url: "<?php echo site_url('list/sell'); ?>",
             },
             language: {
                 zeroRecords: "<center> No Data Avalibale </center>",
             },
             responsive: "true",
         });
-        $("#form-purchase").submit(function(event) {
+        $("#form-sell").submit(function(event) {
             event.preventDefault();
             let id = $("#id").val(), url;
-            id === "" ? url = "purchase/add" : url = "purchase/update";
+            id === "" ? url = "sell/add" : url = "sell/update";
             if (confirm("Is the input data correct ?")) {
                 $.post(url, $(this).serialize()).done((res, xhr, status) => {
                     ReloadTable(table);
@@ -248,38 +248,38 @@
                 });
             }
         });
-        $("#table-purchase").on('click', '#edit', function(event) {
+        $("#table-sell").on('click', '#edit', function(event) {
             event.preventDefault();
             const id = $(this).data('id');
             if (!id) {
                 alert("id is null");
             }
-            $.post('purchase/id', {id: id}).done((res,xhr,status) => {
+            $.post('sell/id', {id: id}).done((res,xhr,status) => {
                 if (res.status) {
                     price = res.data.price.replace(/\D/g,'');
                     let note = (res.data.note) == null ? " " : res.data.note;
                     myEditor.setData(note);
                     $("#id").val(res.data.id);
-                    $("#supplier_id").val(res.data.supplier_id).trigger('change');
+                    $("#customer_id").val(res.data.customer_id).trigger('change');
                     $("#category_id").val(res.data.category_id).trigger('change');
                     $("#product_id").val(res.data.product_id).trigger('change');
                     $("#qty").val(res.data.qty);
                     $("#total").val(res.data.total);
-                    $("#modal-purchase").modal('show');
+                    $("#modal-sell").modal('show');
                 }
             })
         });
-        $("#table-purchase").on('click', '#delete', function(event) {
+        $("#table-sell").on('click', '#delete', function(event) {
             event.preventDefault();
             const id = $(this).data('id');
             if (!id) {
                 alert("id is null");
             }
             if (confirm("Are you sure want to delete this data ?")) {
-                $.post('purchase/delete', {id: id}).done((res,xhr,status) => {
+                $.post('sell/delete', {id: id}).done((res,xhr,status) => {
                     if (res.status) {
                         ReloadTable(table);
-                        notif("info", "info", res.msg);
+                        notif("info", "success", res.msg);
                     }
                 })
             }

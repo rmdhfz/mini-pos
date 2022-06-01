@@ -16,7 +16,11 @@ class Model extends CI_Model {
 		$this->load->library('session');
 		if (!$this->session->userdata('is_login') ){
 			redirect(site_url(), 'refresh');
-			return false;
+			return;
+		}
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
 		}
 	}
 	private function createOptions($id)
@@ -211,6 +215,54 @@ class Model extends CI_Model {
 			$result['data'][$key] = [
 				$no,
 				$value->supplier,
+				$value->category,
+				$value->product,
+				$value->qty,
+				$value->total,
+				$note,
+				change_format_date($value->created_at),
+				$value->created_by,
+				$options
+			];
+		}
+		json($result);
+	}
+	public function listSell()
+	{
+		$get = $this->db->query("
+			SELECT
+			
+			p.id, p.qty, p.total, p.note,
+			p.created_at, p.created_by,
+			c.name as customer,
+			k.name as category,
+			pd.name as product
+
+			FROM sell p
+			INNER JOIN customers c ON p.customer_id = c.id
+			INNER JOIN category k ON p.category_id = k.id
+			INNER JOIN product pd ON p.product_id = pd.id
+
+			WHERE
+			p.is_deleted IS NULL AND
+			k.is_deleted IS NULL AND
+			pd.is_deleted IS NULL
+		");
+		if ($get->num_rows() == 0) {
+			json([]);
+		}
+		$no = 0;
+		$result = ['data' => []];
+		foreach ($get->result() as $key => $value) { $no++;
+			$id = $value->id;
+			$note = ($value->note) == "" ? "-" : $value->note;
+			$options = $this->createOptions($id);
+			if (!$options) {
+				json("failed create options");
+			}
+			$result['data'][$key] = [
+				$no,
+				$value->customer,
 				$value->category,
 				$value->product,
 				$value->qty,

@@ -271,3 +271,208 @@ ERROR - 01-06-2022 11:26:00 --> 404 Page Not Found: Static/assets  --> IP Addres
 ERROR - 01-06-2022 11:26:20 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
 ERROR - 01-06-2022 11:26:20 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
 ERROR - 01-06-2022 11:26:20 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:27:16 --> 404 Page Not Found: Penjualan/index  --> IP Address : ::1
+ERROR - 01-06-2022 11:34:02 --> Severity: error --> Exception: syntax error, unexpected ''penjualan'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' D:\Developments\web\htdocs\minipos\app\config\routes.php 76  --> IP Address : ::1
+ERROR - 01-06-2022 11:34:22 --> 404 Page Not Found: Backend/sell  --> IP Address : ::1
+ERROR - 01-06-2022 11:36:46 --> 404 Page Not Found: List/sell  --> IP Address : ::1
+ERROR - 01-06-2022 11:37:01 --> 404 Page Not Found: List/sell  --> IP Address : ::1
+ERROR - 01-06-2022 11:39:20 --> 404 Page Not Found: List/sell  --> IP Address : ::1
+ERROR - 01-06-2022 11:39:53 --> 404 Page Not Found: List/sell  --> IP Address : ::1
+ERROR - 01-06-2022 11:43:16 --> 404 Page Not Found: List/sell  --> IP Address : ::1
+ERROR - 01-06-2022 11:46:11 --> Query error: Unknown column 'p.customer_id' in 'on clause' - Invalid query: 
+			SELECT
+			
+			p.id, p.qty, p.total, p.note,
+			p.created_at, p.created_by,
+			c.name as customer,
+			k.name as category,
+			pd.name as product
+
+			FROM purchase p
+			INNER JOIN customers c ON p.customer_id = c.id
+			INNER JOIN category k ON p.category_id = k.id
+			INNER JOIN product pd ON p.product_id = pd.id
+
+			WHERE
+			p.is_deleted IS NULL AND
+			k.is_deleted IS NULL AND
+			pd.is_deleted IS NULL
+		  --> IP Address : ::1
+ERROR - 01-06-2022 11:46:13 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:46:13 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:46:13 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:46:14 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:46:14 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:46:14 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:46:14 --> Query error: Unknown column 'p.customer_id' in 'on clause' - Invalid query: 
+			SELECT
+			
+			p.id, p.qty, p.total, p.note,
+			p.created_at, p.created_by,
+			c.name as customer,
+			k.name as category,
+			pd.name as product
+
+			FROM purchase p
+			INNER JOIN customers c ON p.customer_id = c.id
+			INNER JOIN category k ON p.category_id = k.id
+			INNER JOIN product pd ON p.product_id = pd.id
+
+			WHERE
+			p.is_deleted IS NULL AND
+			k.is_deleted IS NULL AND
+			pd.is_deleted IS NULL
+		  --> IP Address : ::1
+ERROR - 01-06-2022 11:46:29 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:46:29 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:46:29 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:46:49 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:46:49 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:46:49 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:54:47 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:54:47 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:54:47 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:55:15 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:55:15 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:55:15 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:55:44 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:55:44 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 11:55:44 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:02:09 --> Query error: Unknown column 'p.supplier_id' in 'field list' - Invalid query: 
+				SELECT 
+				p.id, p.supplier_id, 
+				p.category_id, p.product_id, 
+				p.qty, p.total,
+				pd.price
+				
+				FROM sell p
+				INNER JOIN product pd ON p.product_id = pd.id
+				WHERE 
+				p.id = '3' AND 
+				p.is_deleted IS NULL LIMIT 1
+			  --> IP Address : ::1
+ERROR - 01-06-2022 12:02:09 --> Query error: Unknown column 'p.supplier_id' in 'field list' - Invalid query: 
+				SELECT 
+				p.id, p.supplier_id, 
+				p.category_id, p.product_id, 
+				p.qty, p.total,
+				pd.price
+				
+				FROM sell p
+				INNER JOIN product pd ON p.product_id = pd.id
+				WHERE 
+				p.id = '3' AND 
+				p.is_deleted IS NULL LIMIT 1
+			  --> IP Address : ::1
+ERROR - 01-06-2022 12:02:12 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:02:12 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:02:12 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:02:14 --> Query error: Unknown column 'p.supplier_id' in 'field list' - Invalid query: 
+				SELECT 
+				p.id, p.supplier_id, 
+				p.category_id, p.product_id, 
+				p.qty, p.total,
+				pd.price
+				
+				FROM sell p
+				INNER JOIN product pd ON p.product_id = pd.id
+				WHERE 
+				p.id = '3' AND 
+				p.is_deleted IS NULL LIMIT 1
+			  --> IP Address : ::1
+ERROR - 01-06-2022 12:02:30 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:02:30 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:02:30 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:02:50 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:02:50 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:02:50 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:05:49 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:05:49 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:05:49 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:06:25 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:06:25 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:06:25 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:06:34 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:06:34 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:06:34 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:08:12 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:08:12 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:08:12 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:08:44 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:08:44 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:08:44 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:09:53 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:09:53 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:09:53 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:10:52 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:10:52 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:10:52 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:12:11 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:12:11 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:12:11 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:12:16 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:12:16 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:12:16 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:15:25 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:15:25 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:15:25 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:16:27 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:16:27 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:16:27 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:16:56 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:16:56 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:16:56 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:16:56 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:16:56 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:16:56 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:18:13 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:18:13 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:18:13 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:18:52 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:18:52 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:18:52 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:18:58 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:18:58 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:18:58 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:20:04 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:20:04 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:20:04 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:20:44 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:20:44 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:20:44 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:22:08 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:22:08 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:22:08 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:22:14 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:22:14 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:22:14 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:22:32 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:22:32 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:22:32 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:23:16 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:23:16 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:23:16 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:23:47 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:23:47 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:23:47 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:24:04 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:24:04 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:24:04 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:31:52 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:31:52 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:31:52 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:33:27 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:33:27 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 12:33:27 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 13:27:56 --> 404 Page Not Found: Total/user  --> IP Address : ::1
+ERROR - 01-06-2022 13:27:56 --> 404 Page Not Found: Total/supplier  --> IP Address : ::1
+ERROR - 01-06-2022 13:27:56 --> 404 Page Not Found: Total/produk  --> IP Address : ::1
+ERROR - 01-06-2022 13:27:59 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 13:27:59 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 13:27:59 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 13:28:01 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 13:28:01 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 13:28:01 --> 404 Page Not Found: Total/user  --> IP Address : ::1
+ERROR - 01-06-2022 13:28:01 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 13:28:01 --> 404 Page Not Found: Total/produk  --> IP Address : ::1
+ERROR - 01-06-2022 13:28:01 --> 404 Page Not Found: Total/supplier  --> IP Address : ::1

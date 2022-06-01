@@ -28,57 +28,38 @@ class Backend extends CI_Controller {
 	# list
 	public function listUser()
 	{
-		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
-			http_response_code(405);
-			return;
-		}
 		$this->load->model('model');
 		$this->model->listUser();
 	}
 	public function listSupplier()
 	{
-		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
-			http_response_code(405);
-			return;
-		}
 		$this->load->model('model');
 		$this->model->listSupplier();
 	}
 	public function listCategory()
 	{
-		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
-			http_response_code(405);
-			return;
-		}
 		$this->load->model('model');
 		$this->model->listCategory();
 	}
 	public function listProduct()
 	{
-		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
-			http_response_code(405);
-			return;
-		}
 		$this->load->model('model');
 		$this->model->listProduct();
 	}
 	public function listCustomer()
 	{
-		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
-			http_response_code(405);
-			return;
-		}
 		$this->load->model('model');
 		$this->model->listCustomer();
 	}
 	public function listPurchase()
 	{
-		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
-			http_response_code(405);
-			return;
-		}
 		$this->load->model('model');
 		$this->model->listPurchase();
+	}
+	public function listSell()
+	{
+		$this->load->model('model');
+		$this->model->listSell();
 	}
 	# list
 
@@ -119,6 +100,16 @@ class Backend extends CI_Controller {
 			json(response(false, 404, 'category not found'));
 		}
 		$data = $this->db->query("SELECT id, name, price, description, img FROM product WHERE is_deleted IS NULL AND is_publish = 1");
+		json(response(true, 200, 'success', $data->result()));
+	}
+	public function dataCustomer()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$this->load->database();
+		$data = $this->db->query("SELECT id, name, email FROM customers WHERE is_deleted IS NULL AND is_active = 1");
 		json(response(true, 200, 'success', $data->result()));
 	}
 	# data
@@ -780,12 +771,14 @@ class Backend extends CI_Controller {
 		$supplier_id = post('supplier_id');
 		$category_id = post('category_id');
 		$product_id = post('product_id');
+		$note = $this->input->post('note');
 		$qty = post('qty');
 		$total = post('total');
 		if (
 			!($supplier_id) ||
 			!($category_id) || 
 			!($product_id) || 
+			!($note) || 
 			!($qty) || 
 			!($total)
 		) {
@@ -797,11 +790,11 @@ class Backend extends CI_Controller {
 		if ($check_supplier == 0) {
 			json(response(false, 404, 'supplier not found'));
 		}
-		$check_category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$supplier_id])->num_rows();
+		$check_category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$category_id])->num_rows();
 		if ($check_category == 0) {
 			json(response(false, 404, 'category not found'));
 		}
-		$check_product = $this->db->query("SELECT id FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$supplier_id])->num_rows();
+		$check_product = $this->db->query("SELECT id FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$product_id])->num_rows();
 		if ($check_product == 0) {
 			json(response(false, 404, 'product not found'));
 		}
@@ -810,14 +803,15 @@ class Backend extends CI_Controller {
 			'supplier_id'	=> $supplier_id,
 			'category_id'	=> $category_id,
 			'product_id'	=> $product_id,
+			'note'			=> $note,
 			'qty'			=> $qty,
 			'total'			=> $total,
 			'created_by'	=> session('user_name'),
 		]);
 		if (!$create) {
-			json(response(false, 500, 'failed create pruchase'));
+			json(response(false, 500, 'failed create purchase'));
 		}
-		json(response(true, 201, 'success create pruchase'));
+		json(response(true, 201, 'success create purchase'));
 	}
 	public function purchaseId()
 	{
@@ -834,7 +828,7 @@ class Backend extends CI_Controller {
 				SELECT 
 				p.id, p.supplier_id, 
 				p.category_id, p.product_id, 
-				p.qty, p.total,
+				p.qty, p.total, p.note,
 				pd.price
 				
 				FROM purchase p
@@ -858,6 +852,7 @@ class Backend extends CI_Controller {
 		$supplier_id = post('supplier_id');
 		$category_id = post('category_id');
 		$product_id = post('product_id');
+		$note = $this->input->post('note');
 		$qty = post('qty');
 		$total = post('total');
 		if (
@@ -865,6 +860,7 @@ class Backend extends CI_Controller {
 			!($supplier_id) ||
 			!($category_id) || 
 			!($product_id) || 
+			!($note) || 
 			!($qty) || 
 			!($total)
 		) {
@@ -876,11 +872,11 @@ class Backend extends CI_Controller {
 		if ($check_supplier == 0) {
 			json(response(false, 404, 'supplier not found'));
 		}
-		$check_category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$supplier_id])->num_rows();
+		$check_category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$category_id])->num_rows();
 		if ($check_category == 0) {
 			json(response(false, 404, 'category not found'));
 		}
-		$check_product = $this->db->query("SELECT id FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$supplier_id])->num_rows();
+		$check_product = $this->db->query("SELECT id FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$product_id])->num_rows();
 		if ($check_product == 0) {
 			json(response(false, 404, 'product not found'));
 		}
@@ -896,14 +892,15 @@ class Backend extends CI_Controller {
 			'supplier_id'	=> $supplier_id,
 			'category_id'	=> $category_id,
 			'product_id'	=> $product_id,
+			'note'			=> $note,
 			'qty'			=> $qty,
 			'total'			=> $total,
 			'updated_by'	=> session('user_name'),
 		]);
 		if (!$update) {
-			json(response(false, 500, 'failed update pruchase'));
+			json(response(false, 500, 'failed update purchase'));
 		}
-		json(response(true, 201, 'success update pruchase'));
+		json(response(true, 201, 'success update purchase'));
 	}
 	public function purchaseDelete()
 	{
@@ -931,4 +928,178 @@ class Backend extends CI_Controller {
 		json(response(true, 201, 'success, deleted'));
 	}
 	# purchase
+
+	# sell
+	public function sell()
+	{
+		$this->load([
+			'file' => 'module/sell/index'
+		]);
+	}
+	public function sellAdd()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$customer_id = post('customer_id');
+		$category_id = post('category_id');
+		$product_id = post('product_id');
+		$note = $this->input->post('note');
+		$qty = post('qty');
+		$total = post('total');
+		if (
+			!($customer_id) ||
+			!($category_id) || 
+			!($product_id) || 
+			!($note) || 
+			!($qty) || 
+			!($total)
+		) {
+			json(response(false, 400, 'bad request'));
+		}
+		# check supplier, category, product
+		$this->load->database();
+		$check_customer = $this->db->query("SELECT id FROM customers WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$customer_id])->num_rows();
+		if ($check_customer == 0) {
+			json(response(false, 404, 'customer not found'));
+		}
+		$check_category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$category_id])->num_rows();
+		if ($check_category == 0) {
+			json(response(false, 404, 'category not found'));
+		}
+		$check_product = $this->db->query("SELECT id FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$product_id])->num_rows();
+		if ($check_product == 0) {
+			json(response(false, 404, 'product not found'));
+		}
+
+		$create = $this->db->insert('sell', [
+			'customer_id'	=> $customer_id,
+			'category_id'	=> $category_id,
+			'product_id'	=> $product_id,
+			'note'	=> $note,
+			'qty'			=> $qty,
+			'total'			=> $total,
+			'created_by'	=> session('user_name'),
+		]);
+		if (!$create) {
+			json(response(false, 500, 'failed create sell'));
+		}
+		json(response(true, 201, 'success create sell'));
+	}
+	public function sellId()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$id = post('id');
+		if (!$id) {
+			json(response(false, 400, 'bad request'));
+		}
+		$this->load->database();
+		$get = $this->db->query("
+				SELECT 
+				p.id, p.customer_id, 
+				p.category_id, p.product_id, 
+				p.qty, p.total, p.note,
+				pd.price
+				
+				FROM sell p
+				INNER JOIN product pd ON p.product_id = pd.id
+				WHERE 
+				p.id = ? AND 
+				p.is_deleted IS NULL LIMIT 1
+			", [$id]);
+		if ($get->num_rows() == 0) {
+			json(response(false, 404, 'data not found'));
+		}
+		json(response(true, 200, 'success', $get->row()));
+	}
+	public function sellUpdate()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$id = post('id');
+		$customer_id = post('customer_id');
+		$category_id = post('category_id');
+		$product_id = post('product_id');
+		$note = $this->input->post('note');
+		$qty = post('qty');
+		$total = post('total');
+		if (
+			!($id) ||
+			!($customer_id) ||
+			!($category_id) || 
+			!($product_id) || 
+			!($note) || 
+			!($qty) || 
+			!($total)
+		) {
+			json(response(false, 400, 'bad request'));
+		}
+		# check supplier, category, product
+		$this->load->database();
+		$check_customer = $this->db->query("SELECT id FROM customers WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$customer_id])->num_rows();
+		if ($check_customer == 0) {
+			json(response(false, 404, 'customer not found'));
+		}
+		$check_category = $this->db->query("SELECT id FROM category WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$category_id])->num_rows();
+		if ($check_category == 0) {
+			json(response(false, 404, 'category not found'));
+		}
+		$check_product = $this->db->query("SELECT id FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$product_id])->num_rows();
+		if ($check_product == 0) {
+			json(response(false, 404, 'product not found'));
+		}
+
+		# check data
+		$check = $this->db->query("SELECT id FROM sell WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
+
+		if ($check == 0) {
+			json(response(false, 404, 'data not found'));
+		}
+
+		$update = $this->db->where('id', $id)->update('sell', [
+			'customer_id'	=> $customer_id,
+			'category_id'	=> $category_id,
+			'product_id'	=> $product_id,
+			'note'			=> $note,
+			'qty'			=> $qty,
+			'total'			=> $total,
+			'updated_by'	=> session('user_name'),
+		]);
+		if (!$update) {
+			json(response(false, 500, 'failed update sell'));
+		}
+		json(response(true, 201, 'success update sell'));
+	}
+	public function sellDelete()
+	{
+		if ($_SERVER['REQUEST_METHOD'] !== "POST") {
+			http_response_code(405);
+			return;
+		}
+		$id = post('id');
+		if (!$id) {
+			json(response(false, 400, 'bad request'));
+		}
+		$this->load->database();
+		$check = $this->db->query("SELECT id FROM sell WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$id])->num_rows();
+		if ($check == 0) {
+			json(response(false, 400, 'sell not found'));
+		}
+		$update = $this->db->where('id', $id)->update('sell', [
+			'is_deleted'	=> 1,
+			'deleted_at'	=> date('Y-m-d h:i:s'),
+			'deleted_by'	=> session('user_name'),
+		]);
+		if (!$update) {
+			json(response(false, 500, 'failed'));
+		}
+		json(response(true, 201, 'success, deleted'));
+	}
+	# sell
 }

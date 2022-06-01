@@ -254,6 +254,10 @@
               var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
               return months[monthNumber - 1];
             }
+            function setupselect(id, name) {
+                $(id).empty();
+                $(id).append(`<option value='' selected='1' disabled='1'>Pilih ${name}</option>`);
+            }
         </script>
     </head>
     <body>
