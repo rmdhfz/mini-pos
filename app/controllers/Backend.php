@@ -1222,5 +1222,21 @@ class Backend extends CI_Controller {
 		$this->load->model('model');
 		$this->model->reportPembelian($from, $to);
 	}
+
+	public function laporanPembelianPerProduk()
+	{
+		$this->load([
+			'file' => 'module/report/purchase_product/index'
+		]);
+	}
+	public function reportPembelianPerproduk()
+	{	
+		$from = post('from').POSTFIX_START_REPORT;
+		$to = post('to').POSTFIX_END_REPORT;
+		$product = post('product_id');
+
+		$this->load->model('model');
+		$this->model->reportPembelianPerproduk($from, $to, $product);
+	}
 	# report
 }

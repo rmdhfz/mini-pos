@@ -71,7 +71,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo site_url('laporan/pembelian/perproduk') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Klik untuk melihat laporan pembelian perproduk">
+                <a href="<?php echo site_url('laporan/pembelian/produk') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Klik untuk melihat laporan pembelian perproduk">
                     <span class="pcoded-mtext">Pembelian per Produk</span>
                 </a>
             </li>
@@ -81,7 +81,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo site_url('laporan/penjualan/perproduk') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Klik untuk melihat laporan penjualan">
+                <a href="<?php echo site_url('laporan/penjualan/produk') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Klik untuk melihat laporan penjualan">
                     <span class="pcoded-mtext">Penjualan per Produk</span>
                 </a>
             </li>

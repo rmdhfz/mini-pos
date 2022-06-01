@@ -105,5 +105,8 @@ $route = [
 	# report
 	'laporan/pembelian'			=> 'Backend/laporanPembelian',
 	'report/pembelian'			=> 'Backend/reportPembelian',
+
+	'laporan/pembelian/produk'	=> 'Backend/laporanPembelianPerProduk',
+	'report/pembelian/produk'	=> 'Backend/reportPembelianPerproduk',
 	# report
 ];

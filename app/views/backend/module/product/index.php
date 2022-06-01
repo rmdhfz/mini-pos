@@ -158,6 +158,7 @@
         $("#category_id, #status").select2();
         async function getCategory()
         {
+            setupselect("#category_id", "Kategori");
             await $.post("<?php echo site_url('data/category'); ?>").done((res,xhr,status) => {
                 if (res.status) {
                     const data = res.data;

@@ -356,5 +356,57 @@ class Model extends CI_Model {
 		}
 		json($result);
 	}
+	public function reportPembelianPerproduk($from, $to, $product_id)
+	{
+		# check product
+		$check = $this->db->query("SELECT id FROM product WHERE id = ? AND is_deleted IS NULL LIMIT 1", [$product_id])->num_rows();
+
+		if ($check == 0) {
+			json(response(false, 400, 'product not found'));
+		}
+
+		$get = $this->db->query("
+			SELECT 
+			p.id, p.qty, p.total, p.note,
+			p.created_at, p.created_by,
+			s.name as supplier,
+			k.name as category,
+			pd.name as product
+
+			FROM purchase p
+			INNER JOIN suppliers s ON p.supplier_id = s.id
+			INNER JOIN category k ON p.category_id = k.id
+			INNER JOIN product pd ON p.product_id = pd.id
+
+			WHERE
+			p.is_deleted IS NULL AND
+			k.is_deleted IS NULL AND
+			pd.is_deleted IS NULL AND
+			p.created_at BETWEEN ? AND ? AND
+			p.product_id = ? AND
+			p.is_deleted IS NULL
+			", [$from, $to, $product_id]);
+		if ($get->num_rows() == 0) {
+			json([]);
+		}
+		$no = 0;
+		$result = ['data' => []];
+		foreach ($get->result() as $key => $value) { $no++;
+			$id = $value->id;
+			$note = ($value->note) == "" ? "-" : $value->note;
+			$result['data'][$key] = [
+				$no,
+				$value->supplier,
+				$value->category,
+				$value->product,
+				$value->qty,
+				$value->total,
+				$note,
+				change_format_date($value->created_at),
+				$value->created_by
+			];
+		}
+		json($result);
+	}
 	# report
 }
