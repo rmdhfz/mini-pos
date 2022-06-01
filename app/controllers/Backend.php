@@ -25,6 +25,7 @@ class Backend extends CI_Controller {
 		$this->load->view('backend/index', $params);
 	}
 
+	# monitoring
 	public function monitoring()
 	{
 		$this->load([
@@ -58,6 +59,31 @@ class Backend extends CI_Controller {
 		}
 		json(response(true, 200, 'success'));
 	}
+	# monitoring
+
+	# backup
+	public function backupDatabase()
+	{
+		$this->load->dbutil();
+		$prefs = [
+			'format' => 'zip',
+			'filename' => 'minipos - '. date("d-M-Y:H-i-s") .'.sql',
+			'add_drop' => TRUE,
+			'add_insert' => TRUE,
+			'new_line' => '\n'
+		];
+		$backup =& $this->dbutil->backup($prefs);
+		$file_name = '(backup) Database Minipos - '. date("d-M-Y:H-i-s") .'.zip';
+		$this->zip->download($file_name);
+	}
+	public function backupAplikasi()
+	{
+		$this->load->library('zip');
+		$this->zip->read_dir(FCPATH, TRUE);
+		$cms = '(backup) Aplikasi Minipos by Hafiz Ramadhan - '. date("d-M-Y:H-i-s") .'.zip';
+		$this->zip->download($cms);
+	}
+	# backup
 
 	private function getTotal($table)
 	{

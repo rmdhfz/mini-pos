@@ -60,12 +60,30 @@
         </ul>
     </li>
     <li>
-        <a href="<?php echo site_url('monitoring') ?>" class="waves-effect waves-dark">
+        <a href="<?php echo site_url('monitoring') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Klik untuk melihat pengguna login">
             <span class="pcoded-micon">
                 <i class="feather icon-monitor" aria-hidden="true"></i>
             </span>
             <span class="pcoded-mtext"> Monitoring Login </span>
         </a>
+    </li>
+    <li class="pcoded-hasmenu">
+        <a href="javascript:void(0)" class="waves-effect waves-dark">
+            <span class="pcoded-micon"><i class="fas fa-cogs" aria-hidden="true"></i></span>
+            <span class="pcoded-mtext">Pengaturan Sistem</span>
+        </a>
+        <ul class="pcoded-submenu">
+            <li>
+                <a href="<?php echo site_url('backup/database') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Klik untuk melakukan backup database">
+                    <span class="pcoded-mtext">Backup Database</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?php echo site_url('backup/aplikasi') ?>" class="waves-effect waves-dark" data-toggle="tooltip" data-placement="right" title="Klik untuk melakukan backup aplikasi">
+                    <span class="pcoded-mtext">Backup Aplikasi</span>
+                </a>
+            </li>
+        </ul>
     </li>
     <div class="pcoded-navigation-label">OTHER NAVIGATION</div>
     <li>

@@ -507,3 +507,6 @@ ERROR - 01-06-2022 13:57:31 --> 404 Page Not Found: Static/assets  --> IP Addres
 ERROR - 01-06-2022 13:57:36 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
 ERROR - 01-06-2022 13:57:36 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
 ERROR - 01-06-2022 13:57:36 --> 404 Page Not Found: Static/assets  --> IP Address : ::1
+ERROR - 01-06-2022 14:19:24 --> Severity: Notice --> Only variables should be assigned by reference D:\Developments\web\htdocs\minipos\app\controllers\Backend.php 75  --> IP Address : ::1
+ERROR - 01-06-2022 14:22:01 --> Severity: Notice --> Only variables should be assigned by reference D:\Developments\web\htdocs\minipos\app\controllers\Backend.php 75  --> IP Address : ::1
+ERROR - 01-06-2022 14:25:43 --> Severity: Notice --> Only variables should be assigned by reference D:\Developments\web\htdocs\minipos\app\controllers\Backend.php 75  --> IP Address : ::1
