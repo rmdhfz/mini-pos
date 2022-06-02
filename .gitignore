@@ -6,5 +6,5 @@
 !*/cache/.htaccess
 
 # supaya tidak naik ke github :)
-static/upload/*
+# static/upload/* # izinkan untuk keperluan demo
 app/logs/*
