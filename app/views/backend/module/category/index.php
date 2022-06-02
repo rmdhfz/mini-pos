@@ -95,11 +95,7 @@
                 $.post(url, $(this).serialize()).done((res, xhr, status) => {
                     ReloadTable(table);
                     ClearFormData($(this));
-                    if (res.status && res.code == 200) {
-                        alert("Data Already Exist");
-                    }else{
-                        alert(res.msg);
-                    }
+                    notif("info", "success", res.msg);
                 });
             }
         });

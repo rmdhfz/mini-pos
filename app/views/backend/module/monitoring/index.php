@@ -64,6 +64,7 @@
                     $.post('monitoring/kick', {ip_address: ip}).done((res,xhr,status) => {
                         if (res.status) {
                             notif("info", "success", res.msg);
+                            ReloadTable(table);
                         }
                     }).fail((xhr, res, err) => {
 

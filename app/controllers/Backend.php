@@ -199,7 +199,7 @@ class Backend extends CI_Controller {
 		if ($check == 0) {
 			json(response(false, 404, 'category not found'));
 		}
-		$data = $this->db->query("SELECT id, sku, name, sell_price as price, description, img FROM product WHERE is_deleted IS NULL AND is_publish = 1");
+		$data = $this->db->query("SELECT id, sku, name, sell_price as price, description, img FROM product WHERE is_deleted IS NULL AND is_publish = 1 AND category_id = ?", [$category_id]);
 		json(response(true, 200, 'success', $data->result()));
 	}
 	public function dataCustomer()
@@ -273,7 +273,7 @@ class Backend extends CI_Controller {
 		if (!$create) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 201, 'success, created'));
+		json(response(true, 201, 'User berhasil disimpan'));
 	}
 	public function userId()
 	{
@@ -391,7 +391,7 @@ class Backend extends CI_Controller {
 		if (!$create) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 201, 'success, created'));
+		json(response(true, 201, 'Supplier berhasil disimpan'));
 	}
 	public function supplierId()
 	{
@@ -497,7 +497,7 @@ class Backend extends CI_Controller {
 		if (!$create) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 201, 'success, created'));
+		json(response(true, 201, 'Kategori berhasil disimpan'));
 	}
 	public function categoryId()
 	{
@@ -680,7 +680,7 @@ class Backend extends CI_Controller {
 		if (!$create) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 201, 'success, created'));
+		json(response(true, 201, 'Produk berhasil disimpan'));
 	}
 	public function productId()
 	{
@@ -845,7 +845,7 @@ class Backend extends CI_Controller {
 		if (!$create) {
 			json(response(false, 500, 'failed'));
 		}
-		json(response(true, 201, 'success, created'));
+		json(response(true, 201, 'Pelanggan berhasil disimpan'));
 	}
 	public function customerId()
 	{
@@ -1177,7 +1177,7 @@ class Backend extends CI_Controller {
 		$product_id = post('product_id');
 		$note = $this->input->post('note');
 		$qty = post('qty');
-		$total = post('total');
+		$total = $this->onlyNumeric(post('total'));
 		if (
 			!($customer_id) ||
 			!($category_id) || 
@@ -1202,6 +1202,14 @@ class Backend extends CI_Controller {
 		if ($check_product == 0) {
 			json(response(false, 404, 'product not found'));
 		}
+
+		# check stock product
+		$stock = $this->db->query("SELECT stock FROM product WHERE id = ? AND is_deleted IS NULL AND is_publish = ?", [$product_id, 1])->row()->stock;
+
+		if ($stock < $qty) {
+			json(response(false, 400, 'stock kurang'));
+		}
+
 		$this->db->trans_start();
 		$this->db->trans_strict(false);
 		$create = $this->db->insert('sell', [
@@ -1225,7 +1233,7 @@ class Backend extends CI_Controller {
 			$this->db->trans_rollback();
 		}
 		$this->db->trans_commit();
-		json(response(true, 201, 'success create sell'));
+		json(response(true, 201, 'Penjualan berhasil disimpan'));
 	}
 	public function sellId()
 	{
@@ -1268,7 +1276,7 @@ class Backend extends CI_Controller {
 		$product_id = post('product_id');
 		$note = $this->input->post('note');
 		$qty = post('qty');
-		$total = post('total');
+		$total = $this->onlyNumeric(post('total'));
 		if (
 			!($id) ||
 			!($customer_id) ||

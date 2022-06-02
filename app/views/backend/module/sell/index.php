@@ -245,7 +245,13 @@
                     ClearFormData($(this));
                     notif("info", "success", res.msg);
                     myEditor.setData('');
-                });
+                }).fail((xhr,status,err) => {
+                    if (xhr.status == 404) {
+                        notif("info", "info", "Data tidak ditemukan");
+                    }else if (xhr.status == 400) {
+                        notif("info", "info", "Stok kurang");
+                    }
+                })
             }
         });
         $("#table-sell").on('click', '#edit', function(event) {

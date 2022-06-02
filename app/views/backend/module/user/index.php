@@ -121,7 +121,7 @@
                 $.post(url, $(this).serialize()).done((res, xhr, status) => {
                     ReloadTable(table);
                     ClearFormData($(this));
-                    alert(res.msg);
+                    notif("info", "success", res.msg);
                 });
             }
         });
